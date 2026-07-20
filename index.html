@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Empireon AI — The AI Platform Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --tiefblau: #071126;
+  --tiefblau-flaeche: #0B2244;
+  --akzent: #1E6FB8;
+  --cyan: #4FC3E0;
+  --neutral: #E4EBF3;
+  --weiss: #FFFFFF;
+  --text: #1a1a2e;
+  --text-light: #555;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 26px; color: var(--text); background: var(--neutral); }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  background: var(--tiefblau); padding: 0; height: 60px;
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 24px;
+  height: 100%; display: flex; justify-content: space-between; align-items: center;
+}
+.logo { display: block; text-decoration: none; }
+.logo img { height: 36px; width: auto; }
+.nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+.nav-links a { text-decoration: none; color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--weiss); }
+.nav-cta { background: var(--akzent) !important; color: var(--weiss) !important; padding: 8px 20px; border-radius: 8px; text-transform: none !important; font-size: 14px !important; }
+
+/* HERO */
+.hero {
+  margin-top: 60px; height: 70vh;
+  position: relative; overflow: hidden;
+  display: flex; align-items: center;
+}
+.hero-video-wrap { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+.hero-video-wrap video { width: 100%; height: 100%; object-fit: cover; object-position: right center; }
+.hero-overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(105deg, rgba(7,17,38,0.92) 0%, rgba(7,17,38,0.8) 35%, rgba(7,17,38,0.4) 60%, rgba(7,17,38,0.15) 100%);
+  z-index: 1;
+}
+.hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 24px; width: 100%; }
+.hero-text { max-width: 520px; }
+.hero-badge {
+  display: inline-block; padding: 6px 16px; border-radius: 20px;
+  background: rgba(79,195,224,0.15); color: var(--cyan);
+  font-size: 12px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; margin-bottom: 32px; backdrop-filter: blur(4px);
+}
+.hero h1 { font-size: 36px; line-height: 44px; font-weight: 700; color: var(--weiss); margin-bottom: 20px; }
+.hero p { font-size: 15px; line-height: 26px; color: rgba(255,255,255,0.7); margin-bottom: 32px; }
+
+/* BUTTONS */
+.btn-primary { display: inline-block; background: var(--akzent); color: var(--weiss); padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; transition: background 0.2s; }
+.btn-primary:hover { background: #2580cc; }
+.btn-outline { display: inline-block; border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.8); padding: 13px 32px; border-radius: 8px; text-decoration: none; font-weight: 500; font-size: 15px; margin-left: 12px; transition: all 0.2s; }
+.btn-outline:hover { border-color: var(--cyan); color: var(--cyan); }
+.btn-primary-dark { display: inline-block; background: var(--tiefblau); color: var(--weiss); padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; transition: background 0.2s; }
+.btn-primary-dark:hover { background: var(--tiefblau-flaeche); }
+
+/* GENERAL */
+section { padding: 72px 24px; }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-label { font-size: 14px; font-weight: 600; color: var(--akzent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+.section-title { font-size: 32px; line-height: 40px; font-weight: 700; color: var(--tiefblau); margin-bottom: 12px; }
+.section-subtitle { font-size: 15px; line-height: 24px; color: var(--text-light); max-width: 560px; margin-bottom: 48px; }
+
+/* TRUST STRIP */
+.trust-strip { background: var(--weiss); padding: 32px 24px; border-bottom: 1px solid var(--neutral); }
+.trust-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+.trust-metric .number { font-size: 28px; font-weight: 700; color: var(--akzent); display: block; }
+.trust-metric .label { font-size: 13px; font-weight: 500; color: var(--text-light); margin-top: 4px; display: block; }
+
+/* WARUM WIR — NEW */
+.warum { background: var(--weiss); }
+.warum-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.warum-card {
+  padding: 28px; border-radius: 12px; border: 1px solid var(--neutral);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.warum-card:hover { border-color: var(--akzent); box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.warum-icon {
+  width: 44px; height: 44px; border-radius: 10px; background: var(--neutral);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+}
+.warum-icon svg { width: 22px; height: 22px; stroke: var(--akzent); fill: none; stroke-width: 1.5; }
+.warum-card h4 { font-size: 16px; font-weight: 600; color: var(--tiefblau); margin-bottom: 8px; }
+.warum-card p { font-size: 13px; line-height: 20px; color: var(--text-light); }
+
+/* GRUENDER — redesigned */
+.gruender { background: var(--neutral); }
+.founder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 48px; }
+.founder-card {
+  background: var(--weiss); border-radius: 12px; overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+.founder-photo {
+  background: var(--neutral); height: 280px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-light); font-size: 12px;
+}
+.founder-info { padding: 28px; }
+.founder-name { font-size: 20px; font-weight: 700; color: var(--tiefblau); margin-bottom: 4px; }
+.founder-role { font-size: 13px; font-weight: 600; color: var(--akzent); margin-bottom: 16px; display: block; }
+.founder-points { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.founder-points li {
+  font-size: 13px; line-height: 20px; color: var(--text-light);
+  padding-left: 16px; position: relative;
+}
+.founder-points li::before {
+  content: ''; position: absolute; left: 0; top: 8px;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--akzent);
+}
+.founder-statement {
+  background: var(--weiss); border-radius: 12px; padding: 36px;
+  text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+.founder-statement blockquote {
+  font-size: 22px; line-height: 32px; font-weight: 700; color: var(--tiefblau); margin-bottom: 8px;
+}
+.founder-statement cite { font-style: normal; font-size: 13px; color: var(--text-light); }
+
+/* DREI SAEULEN — NEW */
+.saeulen { background: var(--weiss); }
+.saeulen-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.saeulen-card {
+  background: var(--weiss); padding: 32px; border-radius: 12px;
+  border: 1px solid var(--neutral); text-align: center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.saeulen-card:hover { border-color: var(--akzent); box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.saeulen-icon {
+  width: 56px; height: 56px; border-radius: 14px; background: var(--neutral);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+}
+.saeulen-icon svg { width: 28px; height: 28px; stroke: var(--akzent); fill: none; stroke-width: 1.5; }
+.saeulen-card h3 { font-size: 18px; font-weight: 600; color: var(--tiefblau); margin-bottom: 4px; }
+.saeulen-card .saeulen-sub { font-size: 13px; color: var(--akzent); font-weight: 500; margin-bottom: 12px; }
+.saeulen-card p { font-size: 13px; line-height: 20px; color: var(--text-light); }
+
+/* PROZESS — 5 steps */
+.prozess { background: var(--neutral); }
+.process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative; }
+.process-steps::before {
+  content: ''; position: absolute; top: 28px;
+  left: calc(10%); right: calc(10%);
+  height: 2px; background: var(--akzent); opacity: 0.3;
+}
+.step { text-align: center; padding: 0 12px; position: relative; }
+.step-number {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--weiss); border: 2px solid var(--akzent);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 12px; font-size: 18px; font-weight: 700;
+  color: var(--akzent); position: relative; z-index: 1;
+}
+.step h3 { font-size: 14px; font-weight: 600; color: var(--tiefblau); margin-bottom: 6px; }
+.step p { font-size: 12px; line-height: 18px; color: var(--text-light); }
+
+/* SICHERHEIT */
+.sicherheit { background: var(--tiefblau); color: var(--weiss); position: relative; overflow: hidden; }
+.sicherheit::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(30,111,184,0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(79,195,224,0.1) 0%, transparent 50%);
+}
+.sicherheit .container { position: relative; z-index: 1; }
+.sicherheit .section-label { color: var(--cyan); }
+.sicherheit .section-title { color: var(--weiss); }
+.sicherheit .section-subtitle { color: rgba(255,255,255,0.6); }
+.security-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.security-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 24px; transition: all 0.2s;
+}
+.security-card:hover { background: rgba(255,255,255,0.06); border-color: rgba(79,195,224,0.3); }
+.security-card-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(79,195,224,0.1); margin-bottom: 14px;
+  display: flex; align-items: center; justify-content: center;
+}
+.security-card-icon svg { width: 20px; height: 20px; stroke: var(--cyan); fill: none; stroke-width: 1.5; }
+.security-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.security-card p { font-size: 13px; line-height: 20px; color: rgba(255,255,255,0.55); }
+.security-badge-row { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+.security-badge {
+  display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 8px;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.7);
+}
+.badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); flex-shrink: 0; }
+
+/* REFERENZEN — NEW (structural placeholder) */
+.referenzen { background: var(--weiss); }
+.ref-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.ref-card {
+  background: var(--weiss); border: 1px solid var(--neutral); border-radius: 12px;
+  padding: 28px; text-align: center;
+}
+.ref-card .ref-logo {
+  height: 48px; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px; color: var(--text-light); font-size: 12px;
+  font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+}
+.ref-card .ref-stat { font-size: 24px; font-weight: 700; color: var(--akzent); margin-bottom: 4px; }
+.ref-card .ref-desc { font-size: 13px; color: var(--text-light); line-height: 20px; }
+.ref-card .ref-type {
+  display: inline-block; margin-top: 12px; padding: 4px 12px;
+  border-radius: 20px; font-size: 11px; font-weight: 500;
+  background: var(--neutral); color: var(--text-light);
+}
+
+/* ACADEMY — NEW */
+.academy { background: var(--neutral); }
+.academy-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+}
+.academy-text h3 { font-size: 24px; font-weight: 700; color: var(--tiefblau); margin-bottom: 12px; }
+.academy-text p { font-size: 15px; line-height: 24px; color: var(--text-light); margin-bottom: 24px; }
+.academy-visual {
+  background: var(--weiss); border-radius: 12px; height: 200px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-light); font-size: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+
+/* KONTAKT — enhanced with personal photo */
+.kontakt { background: var(--weiss); }
+.kontakt-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 32px; align-items: start; }
+.kontakt-person {
+  background: var(--weiss); border: 1px solid var(--neutral); border-radius: 12px;
+  overflow: hidden; text-align: center;
+}
+.kontakt-person-photo {
+  background: var(--neutral); height: 200px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-light); font-size: 12px;
+}
+.kontakt-person-info { padding: 24px; }
+.kontakt-person-info h4 { font-size: 16px; font-weight: 600; color: var(--tiefblau); margin-bottom: 2px; }
+.kontakt-person-info .person-role { font-size: 13px; color: var(--akzent); font-weight: 500; margin-bottom: 12px; }
+.kontakt-person-info a { display: block; font-size: 13px; color: var(--text-light); text-decoration: none; margin-bottom: 4px; }
+.kontakt-person-info a:hover { color: var(--akzent); }
+.kontakt-right { display: flex; flex-direction: column; gap: 20px; }
+.kontakt-cards-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.kontakt-card {
+  background: var(--weiss); border: 1px solid var(--neutral); border-radius: 12px;
+  padding: 20px; transition: border-color 0.2s;
+}
+.kontakt-card:hover { border-color: var(--akzent); }
+.kontakt-card-icon {
+  width: 40px; height: 40px; border-radius: 10px; background: var(--neutral);
+  margin-bottom: 12px; display: flex; align-items: center; justify-content: center;
+}
+.kontakt-card-icon svg { width: 20px; height: 20px; stroke: var(--akzent); fill: none; stroke-width: 1.5; }
+.kontakt-card h4 { font-size: 14px; font-weight: 600; color: var(--tiefblau); margin-bottom: 4px; }
+.kontakt-card p { font-size: 13px; color: var(--text-light); line-height: 20px; }
+.kontakt-card a { color: var(--akzent); text-decoration: none; font-weight: 500; }
+.kontakt-cta-bar {
+  padding: 32px; background: var(--neutral); border-radius: 12px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.kontakt-cta-bar h3 { font-size: 20px; font-weight: 700; color: var(--tiefblau); margin-bottom: 6px; }
+.kontakt-cta-bar p { font-size: 14px; color: var(--text-light); max-width: 500px; }
+
+/* FOOTER */
+footer { background: var(--tiefblau); padding: 36px 24px; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+.footer-brand .footer-logo { margin-bottom: 12px; }
+.footer-brand .footer-logo img { height: 32px; width: auto; }
+.footer-brand p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 20px; max-width: 300px; }
+.footer-col h5 { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.footer-col a { display: block; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 14px; margin-bottom: 6px; transition: color 0.2s; }
+.footer-col a:hover { color: var(--weiss); }
+.footer-bottom {
+  max-width: 1200px; margin: 24px auto 0; padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 13px; color: rgba(255,255,255,0.3);
+  display: flex; justify-content: space-between;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 28px; line-height: 36px; }
+  .hero-text { max-width: 100%; }
+  .hero { min-height: 60vh; }
+  .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .warum-grid, .saeulen-grid, .ref-grid { grid-template-columns: 1fr; }
+  .founder-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; gap: 24px; }
+  .process-steps::before { display: none; }
+  .security-grid { grid-template-columns: 1fr; }
+  .academy-inner { grid-template-columns: 1fr; }
+  .kontakt-layout { grid-template-columns: 1fr; }
+  .kontakt-cards-row { grid-template-columns: 1fr; }
+  .kontakt-cta-bar { flex-direction: column; gap: 20px; text-align: center; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+  .nav-links { display: none; }
+  .section-title { font-size: 26px; line-height: 34px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <img src="assets/logo-white.png" alt="Empireon AI Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#warum">Warum wir</a></li>
+      <li><a href="#gruender">Team</a></li>
+      <li><a href="#loesung">Lösung</a></li>
+      <li><a href="#sicherheit">Sicherheit</a></li>
+      <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="hero-video-wrap">
+    <video autoplay muted loop playsinline preload="metadata" poster="assets/schloss-ahrensburg.jpg">
+      <source src="assets/schloss-loop.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">DSGVO-konforme KI-Plattform</div>
+      <h1>Sichere KI-Systeme – entwickelt und betrieben in Norddeutschland.</h1>
+      <p>Wir bauen KI-Plattformen für Unternehmen, die bei Datenschutz und Compliance keine Kompromisse eingehen. Keine Demos — produktive Systeme.</p>
+      <a href="#kontakt" class="btn-primary">Kennenlernen</a>
+      <a href="#warum" class="btn-outline">Warum Empireon</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-grid">
+    <div class="trust-metric"><span class="number">100%</span><span class="label">Deutsche Server</span></div>
+    <div class="trust-metric"><span class="number">§203</span><span class="label">StGB-konform</span></div>
+    <div class="trust-metric"><span class="number">25+</span><span class="label">Jahre Engineeringkompetenz</span></div>
+    <div class="trust-metric"><span class="number">DSGVO</span><span class="label">by Design</span></div>
+  </div>
+</div>
+
+<!-- 2. WARUM WIR — NEW -->
+<section class="warum" id="warum">
+  <div class="container">
+    <div class="section-label">Warum Empireon</div>
+    <div class="section-title">Warum Unternehmen uns vertrauen.</div>
+    <div class="section-subtitle">Vertrauen entsteht nicht durch Versprechen. Sondern durch nachvollziehbare Entscheidungen.</div>
+    <div class="warum-grid">
+      <div class="warum-card">
+        <div class="warum-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M3 7v1a3 3 0 006 0V7m0 1a3 3 0 006 0V7m0 1a3 3 0 006 0V7H3l2-4h14l2 4"/></svg></div>
+        <h4>Deutsche Entwicklung</h4>
+        <p>Konzeption, Entwicklung und Betrieb — alles aus Deutschland. Keine Offshore-Entwicklung, keine fremden Hände an Ihren Daten.</p>
+      </div>
+      <div class="warum-card">
+        <div class="warum-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+        <h4>Transparente Architektur</h4>
+        <p>Keine Blackbox. Sie wissen jederzeit, wie Ihr System aufgebaut ist, wo Daten verarbeitet werden und warum.</p>
+      </div>
+      <div class="warum-card">
+        <div class="warum-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h4>Persönliche Ansprechpartner</h4>
+        <p>Kein Ticketsystem, kein Chatbot. Sie sprechen direkt mit den Menschen, die Ihr System gebaut haben.</p>
+      </div>
+      <div class="warum-card">
+        <div class="warum-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h4>Langfristiger Betrieb</h4>
+        <p>Wir bauen keine Prototypen. Wir betreiben produktive Systeme — mit Monitoring, Support und kontinuierlicher Optimierung.</p>
+      </div>
+      <div class="warum-card">
+        <div class="warum-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h4>Datenschutz & Compliance</h4>
+        <p>DSGVO, § 203 StGB, EU AI Act — Sicherheit ist bei uns kein Feature, sondern die Grundlage jeder Architekturentscheidung.</p>
+      </div>
+      <div class="warum-card">
+        <div class="warum-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <h4>Tiefe Integration</h4>
+        <p>Unsere KI integriert sich nahtlos in Ihre bestehenden Anwendungen, Prozesse und Workflows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. GRUENDER — redesigned -->
+<section class="gruender" id="gruender">
+  <div class="container">
+    <div class="section-label">Die Gründer</div>
+    <div class="section-title">Vertrauen entsteht nicht durch KI. Sondern durch die Menschen dahinter.</div>
+    <div class="section-subtitle">Zwei Unternehmer, die seit über einem Jahrzehnt gemeinsam Technologielösungen für anspruchsvolle Branchen entwickeln.</div>
+    <div class="founder-grid">
+      <div class="founder-card">
+        <div class="founder-photo">[ Platzhalter: Portrait York Schmidt zur Nedden, 4:5 ]</div>
+        <div class="founder-info">
+          <div class="founder-name">York Schmidt zur Nedden</div>
+          <span class="founder-role">Geschäftsführer</span>
+          <ul class="founder-points">
+            <li>25 Jahre Geschäftsführer</li>
+            <li>Aufbau mehrerer Softwareunternehmen</li>
+            <li>Digitalisierung mittelständischer Unternehmen</li>
+            <li>Verantwortlich für Strategie und Kundenerfolg</li>
+          </ul>
+        </div>
+      </div>
+      <div class="founder-card">
+        <div class="founder-photo">[ Platzhalter: Portrait Michael Dudenko, 4:5 ]</div>
+        <div class="founder-info">
+          <div class="founder-name">Michael Dudenko</div>
+          <span class="founder-role">Geschäftsführer / CTO</span>
+          <ul class="founder-points">
+            <li>Gründer von MD Software und Design</li>
+            <li>AI Engineer &amp; Plattformarchitektur</li>
+            <li>Voice AI &amp; skalierbare KI-Systeme</li>
+            <li>Betrieb produktiver Systeme</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="founder-statement">
+      <blockquote>„Wir verkaufen keine KI. Wir übernehmen Verantwortung für produktive Systeme."</blockquote>
+      <cite>— York Schmidt zur Nedden &amp; Michael Dudenko, Gründer Empireon AI</cite>
+    </div>
+  </div>
+</section>
+
+<!-- 4. DREI SAEULEN — NEW -->
+<section class="saeulen" id="loesung">
+  <div class="container">
+    <div class="section-label">Was wir machen</div>
+    <div class="section-title">Drei Säulen. Ein Ziel: produktive KI.</div>
+    <div class="section-subtitle">Wir optimieren nicht auf die schnellste Demo. Wir optimieren auf Sicherheit, Integration und dauerhaften Betrieb.</div>
+    <div class="saeulen-grid">
+      <div class="saeulen-card">
+        <div class="saeulen-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <h3>KI-Voice-Agenten</h3>
+        <div class="saeulen-sub">Telefonie automatisieren.</div>
+        <p>Intelligente Sprachagenten für In- und Outbound. Mandantenanfragen beantworten, Termine koordinieren, Routineaufgaben übernehmen — rund um die Uhr.</p>
+      </div>
+      <div class="saeulen-card">
+        <div class="saeulen-icon">
+          <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3>KI-Workflows</h3>
+        <div class="saeulen-sub">Prozesse automatisieren.</div>
+        <p>Dokumentenverarbeitung, Datenextraktion, automatisierte Abläufe — individuell auf Ihre Prozesse zugeschnitten und nahtlos in bestehende Systeme integriert.</p>
+      </div>
+      <div class="saeulen-card">
+        <div class="saeulen-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3>AI Engineering</h3>
+        <div class="saeulen-sub">Individuelle KI-Lösungen.</div>
+        <p>Konzeption, Entwicklung und Betrieb maßgeschneiderter KI-Systeme. Von der Architektur bis zum produktiven Dauerbetrieb — alles aus einer Hand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. PROZESS — 5 Steps -->
+<section class="prozess">
+  <div class="container">
+    <div class="section-label">So arbeiten wir</div>
+    <div class="section-title">Von der Strategie bis zum sicheren Betrieb.</div>
+    <div class="section-subtitle">Viele Unternehmen können eine KI-Demo zeigen. Wir begleiten den gesamten Weg — von der Konzeption bis zum dauerhaften Betrieb.</div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Strategie</h3>
+        <p>Anforderungen verstehen, Ziele definieren, Machbarkeit prüfen.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Workshop</h3>
+        <p>Prozesse analysieren, Architektur konzipieren, Compliance klären.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Pilot</h3>
+        <p>System aufbauen, testen, validieren — im echten Umfeld.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Produktivbetrieb</h3>
+        <p>Rollout, Integration, Monitoring — sicher und stabil.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">5</div>
+        <h3>Optimierung</h3>
+        <p>Kontinuierliche Verbesserung, langfristiger Support, Weiterentwicklung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. SICHERHEIT -->
+<section class="sicherheit" id="sicherheit">
+  <div class="container">
+    <div class="section-label">Sicherheit & Compliance</div>
+    <div class="section-title">Sicherheit ist kein Zusatzmodul.</div>
+    <div class="section-subtitle">Für Berufsgeheimnisträger ist Datenschutz existenziell. Deshalb ist er bei uns kein Feature — sondern die Grundlage jeder Architekturentscheidung.</div>
+    <div class="security-grid">
+      <div class="security-card">
+        <div class="security-card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h4>DSGVO-Konformität</h4>
+        <p>Vollständige Konformität. Datenverarbeitung ausschließlich auf Servern in Deutschland.</p>
+      </div>
+      <div class="security-card">
+        <div class="security-card-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h4>§ 203 StGB</h4>
+        <p>Architektur für Berufsgeheimnisträger — Steuerberater, Anwälte, Wirtschaftsprüfer, Notare.</p>
+      </div>
+      <div class="security-card">
+        <div class="security-card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+        <h4>Ende-zu-Ende-Verschlüsselung</h4>
+        <p>Verschlüsselte Übertragung, verschlüsselte Speicherung, strikte Zugriffskontrolle.</p>
+      </div>
+      <div class="security-card">
+        <div class="security-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h4>Keine Drittanbieter</h4>
+        <p>Kein Routing über US-Server, keine versteckten Subprozessoren. Volle Transparenz.</p>
+      </div>
+    </div>
+    <div class="security-badge-row">
+      <div class="security-badge"><div class="badge-dot"></div>Deutsche Rechenzentren</div>
+      <div class="security-badge"><div class="badge-dot"></div>EU AI Act Ready</div>
+      <div class="security-badge"><div class="badge-dot"></div>AV-Vertrag inklusive</div>
+      <div class="security-badge"><div class="badge-dot"></div>SLA garantiert</div>
+      <div class="security-badge"><div class="badge-dot"></div>Monitoring & Logging</div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. REFERENZEN — structural placeholder -->
+<section class="referenzen" id="referenzen">
+  <div class="container">
+    <div class="section-label">Referenzen</div>
+    <div class="section-title">Unternehmen, die auf uns setzen.</div>
+    <div class="section-subtitle">Konkrete Ergebnisse statt Marketingversprechen.</div>
+    <div class="ref-grid">
+      <div class="ref-card">
+        <div class="ref-logo">[ Kundenlogo ]</div>
+        <div class="ref-stat">Platzhalter</div>
+        <div class="ref-desc">Beschreibung des Projekts und der konkreten Ergebnisse folgt.</div>
+        <span class="ref-type">Voice AI</span>
+      </div>
+      <div class="ref-card">
+        <div class="ref-logo">[ Kundenlogo ]</div>
+        <div class="ref-stat">Platzhalter</div>
+        <div class="ref-desc">Beschreibung des Projekts und der konkreten Ergebnisse folgt.</div>
+        <span class="ref-type">KI-Workflow</span>
+      </div>
+      <div class="ref-card">
+        <div class="ref-logo">[ Kundenlogo ]</div>
+        <div class="ref-stat">Platzhalter</div>
+        <div class="ref-desc">Beschreibung des Projekts und der konkreten Ergebnisse folgt.</div>
+        <span class="ref-type">AI Engineering</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. ACADEMY — NEW -->
+<section class="academy">
+  <div class="container">
+    <div class="academy-inner">
+      <div class="academy-text">
+        <div class="section-label">Empireon Academy</div>
+        <h3>Wir entwickeln nicht nur KI-Systeme. Wir bilden Unternehmen im professionellen Einsatz von KI aus.</h3>
+        <p>Praxisnahes AI-Engineering-Wissen für Entscheider im deutschen Mittelstand — rechtssicher, produktiv und verständlich. DSGVO, EU AI Act und produktiver KI-Einsatz.</p>
+        <a href="#" class="btn-primary">Zur Academy</a>
+      </div>
+      <div class="academy-visual">[ Platzhalter: Academy Visual / Workshop-Foto ]</div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. KONTAKT — enhanced -->
+<section class="kontakt" id="kontakt">
+  <div class="container">
+    <div class="section-label">Ihr Ansprechpartner</div>
+    <div class="section-title">Lassen Sie uns sprechen.</div>
+    <div class="section-subtitle">Kein Verkaufsdruck, kein Standardpitch. Wir hören zu, verstehen Ihre Anforderungen und zeigen Ihnen, was möglich ist.</div>
+    <div class="kontakt-layout">
+      <div class="kontakt-person">
+        <div class="kontakt-person-photo">[ Platzhalter: Foto York ]</div>
+        <div class="kontakt-person-info">
+          <h4>York Schmidt zur Nedden</h4>
+          <div class="person-role">Geschäftsführer</div>
+          <a href="tel:+4941028954332">+49 4102 8954332</a>
+          <a href="mailto:szn@empireon.de">szn@empireon.de</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+      <div class="kontakt-right">
+        <div class="kontakt-cards-row">
+          <div class="kontakt-card">
+            <div class="kontakt-card-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <h4>Adresse</h4>
+            <p>Empireon AI GmbH<br>Kornkamp 2<br>22926 Ahrensburg</p>
+          </div>
+          <div class="kontakt-card">
+            <div class="kontakt-card-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+            <h4>Telefon</h4>
+            <p><a href="tel:+4941028954332">+49 4102 8954332</a></p>
+          </div>
+          <div class="kontakt-card">
+            <div class="kontakt-card-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></div>
+            <h4>E-Mail</h4>
+            <p><a href="mailto:info@empireon.de">info@empireon.de</a></p>
+          </div>
+        </div>
+        <div class="kontakt-cta-bar">
+          <div>
+            <h3>Bereit für ein Gespräch?</h3>
+            <p>30 Minuten, unverbindlich. Wir klären gemeinsam, ob und wie ein KI-System in Ihren Arbeitsalltag passt.</p>
+          </div>
+          <a href="#" class="btn-primary-dark">Termin buchen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo"><img src="assets/logo-white.png" alt="Empireon AI Logo"></div>
+      <p>KI-Systeme, bei denen Sicherheit nicht verhandelbar ist. Entwickelt in Ahrensburg. Im Einsatz bei Unternehmen in ganz Deutschland.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Unternehmen</h5>
+      <a href="#warum">Warum wir</a>
+      <a href="#gruender">Team</a>
+      <a href="#loesung">Lösung</a>
+      <a href="#sicherheit">Sicherheit</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+    <div class="footer-col">
+      <h5>Rechtliches</h5>
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+      <a href="#">AGB</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Empireon AI GmbH. Alle Rechte vorbehalten.</span>
+    <span>Entwickelt in Ahrensburg, Deutschland.</span>
+  </div>
+</footer>
+
+</body>
+</html>
