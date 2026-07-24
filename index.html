@@ -107,9 +107,11 @@ section { padding: 72px 24px; }
 }
 .founder-photo {
   background: var(--neutral); height: 280px;
+  overflow: hidden;
   display: flex; align-items: center; justify-content: center;
   color: var(--text-light); font-size: 12px;
 }
+.founder-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
 .founder-info { padding: 28px; }
 .founder-name { font-size: 20px; font-weight: 700; color: var(--tiefblau); margin-bottom: 4px; }
 .founder-role { font-size: 13px; font-weight: 600; color: var(--akzent); margin-bottom: 16px; display: block; }
@@ -195,11 +197,12 @@ section { padding: 72px 24px; }
 .security-card-icon svg { width: 20px; height: 20px; stroke: var(--cyan); fill: none; stroke-width: 1.5; }
 .security-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
 .security-card p { font-size: 13px; line-height: 20px; color: rgba(255,255,255,0.55); }
-.security-badge-row { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+.security-badge-row { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; justify-content: center; }
 .security-badge {
   display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 8px;
   background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
   font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.7);
+  flex: 1 1 auto; justify-content: center; min-width: 140px; max-width: calc(20% - 12px);
 }
 .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); flex-shrink: 0; }
 
@@ -231,29 +234,30 @@ section { padding: 72px 24px; }
 .academy-text h3 { font-size: 24px; font-weight: 700; color: var(--tiefblau); margin-bottom: 12px; }
 .academy-text p { font-size: 15px; line-height: 24px; color: var(--text-light); margin-bottom: 24px; }
 .academy-visual {
-  background: var(--weiss); border-radius: 12px; height: 200px;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--text-light); font-size: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  border-radius: 12px; overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
 }
+.academy-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* KONTAKT — enhanced with personal photo */
+/* KONTAKT — Visitenkarten */
 .kontakt { background: var(--weiss); }
-.kontakt-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 32px; align-items: start; }
+.kontakt-layout { display: flex; flex-direction: column; gap: 32px; }
+.kontakt-persons { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .kontakt-person {
   background: var(--weiss); border: 1px solid var(--neutral); border-radius: 12px;
-  overflow: hidden; text-align: center;
+  padding: 24px; display: flex; gap: 20px; align-items: flex-start;
 }
 .kontakt-person-photo {
-  background: var(--neutral); height: 200px;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--text-light); font-size: 12px;
+  width: 100px; height: 100px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
 }
-.kontakt-person-info { padding: 24px; }
+.kontakt-person-photo img { width: 100%; height: 100%; object-fit: cover; }
+.kontakt-person-info { text-align: left; }
 .kontakt-person-info h4 { font-size: 16px; font-weight: 600; color: var(--tiefblau); margin-bottom: 2px; }
-.kontakt-person-info .person-role { font-size: 13px; color: var(--akzent); font-weight: 500; margin-bottom: 12px; }
+.kontakt-person-info .person-role { font-size: 13px; color: var(--akzent); font-weight: 500; margin-bottom: 4px; }
+.kontakt-person-info .person-focus { font-size: 13px; color: var(--text-light); margin-bottom: 12px; }
 .kontakt-person-info a { display: block; font-size: 13px; color: var(--text-light); text-decoration: none; margin-bottom: 4px; }
 .kontakt-person-info a:hover { color: var(--akzent); }
-.kontakt-right { display: flex; flex-direction: column; gap: 20px; }
+.kontakt-details { display: flex; flex-direction: column; gap: 20px; }
 .kontakt-cards-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .kontakt-card {
   background: var(--weiss); border: 1px solid var(--neutral); border-radius: 12px;
@@ -303,7 +307,7 @@ footer { background: var(--tiefblau); padding: 36px 24px; border-top: 1px solid 
   .process-steps::before { display: none; }
   .security-grid { grid-template-columns: 1fr; }
   .academy-inner { grid-template-columns: 1fr; }
-  .kontakt-layout { grid-template-columns: 1fr; }
+  .kontakt-persons { grid-template-columns: 1fr; }
   .kontakt-cards-row { grid-template-columns: 1fr; }
   .kontakt-cta-bar { flex-direction: column; gap: 20px; text-align: center; }
   .footer-grid { grid-template-columns: 1fr; }
@@ -334,7 +338,7 @@ footer { background: var(--tiefblau); padding: 36px 24px; border-top: 1px solid 
 <section class="hero">
   <div class="hero-video-wrap">
     <video autoplay muted loop playsinline preload="metadata" poster="assets/schloss-ahrensburg.jpg">
-      <source src="assets/schloss-loop.mp4" type="video/mp4">
+      <source src="assets/hero-loop.mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero-overlay"></div>
@@ -408,12 +412,12 @@ footer { background: var(--tiefblau); padding: 36px 24px; border-top: 1px solid 
     <div class="section-subtitle">Zwei Unternehmer, die seit über einem Jahrzehnt gemeinsam Technologielösungen für anspruchsvolle Branchen entwickeln.</div>
     <div class="founder-grid">
       <div class="founder-card">
-        <div class="founder-photo">[ Platzhalter: Portrait York Schmidt zur Nedden, 4:5 ]</div>
+        <div class="founder-photo"><img src="assets/york_neu.jpg" alt="York Schmidt zur Nedden"></div>
         <div class="founder-info">
           <div class="founder-name">York Schmidt zur Nedden</div>
-          <span class="founder-role">Geschäftsführer</span>
+          <span class="founder-role">Geschäftsführung</span>
           <ul class="founder-points">
-            <li>25 Jahre Geschäftsführer</li>
+            <li>25 Jahre Führungs- und Geschäftsführungsverantwortung</li>
             <li>Aufbau mehrerer Softwareunternehmen</li>
             <li>Digitalisierung mittelständischer Unternehmen</li>
             <li>Verantwortlich für Strategie und Kundenerfolg</li>
@@ -421,15 +425,15 @@ footer { background: var(--tiefblau); padding: 36px 24px; border-top: 1px solid 
         </div>
       </div>
       <div class="founder-card">
-        <div class="founder-photo">[ Platzhalter: Portrait Michael Dudenko, 4:5 ]</div>
+        <div class="founder-photo"><img src="assets/michael_neu.jpg" alt="Michael Dudenko" style="object-position: bottom;"></div>
         <div class="founder-info">
           <div class="founder-name">Michael Dudenko</div>
-          <span class="founder-role">Geschäftsführer / CTO</span>
+          <span class="founder-role">Geschäftsführung</span>
           <ul class="founder-points">
-            <li>Gründer von MD Software und Design</li>
-            <li>AI Engineer &amp; Plattformarchitektur</li>
-            <li>Voice AI &amp; skalierbare KI-Systeme</li>
-            <li>Betrieb produktiver Systeme</li>
+            <li>25 Jahre Erfahrung in Softwareentwicklung und Architekturen</li>
+            <li>Gründer und Leiter der Empireon AI Academy</li>
+            <li>Verantwortlich für Produktentwicklung und KI-Systeme</li>
+            <li>Technischer Ansprechpartner für Kunden und Partner</li>
           </ul>
         </div>
       </div>
@@ -546,12 +550,14 @@ footer { background: var(--tiefblau); padding: 36px 24px; border-top: 1px solid 
       <div class="security-badge"><div class="badge-dot"></div>AV-Vertrag inklusive</div>
       <div class="security-badge"><div class="badge-dot"></div>SLA garantiert</div>
       <div class="security-badge"><div class="badge-dot"></div>Monitoring & Logging</div>
+      <div class="security-badge"><div class="badge-dot"></div>Lösch- und Aufbewahrungskonzept</div>
+      <div class="security-badge"><div class="badge-dot"></div>Dokumentierte Datenflüsse</div>
     </div>
   </div>
 </section>
 
-<!-- 7. REFERENZEN — structural placeholder -->
-<section class="referenzen" id="referenzen">
+<!-- 7. REFERENZEN — ausgeblendet bis echte Referenzen vorhanden -->
+<section class="referenzen" id="referenzen" style="display:none;"
   <div class="container">
     <div class="section-label">Referenzen</div>
     <div class="section-title">Unternehmen, die auf uns setzen.</div>
@@ -585,11 +591,11 @@ footer { background: var(--tiefblau); padding: 36px 24px; border-top: 1px solid 
     <div class="academy-inner">
       <div class="academy-text">
         <div class="section-label">Empireon Academy</div>
-        <h3>Wir entwickeln nicht nur KI-Systeme. Wir bilden Unternehmen im professionellen Einsatz von KI aus.</h3>
-        <p>Praxisnahes AI-Engineering-Wissen für Entscheider im deutschen Mittelstand — rechtssicher, produktiv und verständlich. DSGVO, EU AI Act und produktiver KI-Einsatz.</p>
+        <h3>Wissen, das aus produktiven Projekten entsteht.</h3>
+        <p>In der Empireon Academy vermitteln unsere Entwickler und Architekten die Erfahrungen aus dem Aufbau und Betrieb realer KI-Systeme.</p>
         <a href="#" class="btn-primary">Zur Academy</a>
       </div>
-      <div class="academy-visual">[ Platzhalter: Academy Visual / Workshop-Foto ]</div>
+      <div class="academy-visual"><img src="assets/academy.jpg" alt="Empireon Academy Workshop"></div>
     </div>
   </div>
 </section>
@@ -597,26 +603,39 @@ footer { background: var(--tiefblau); padding: 36px 24px; border-top: 1px solid 
 <!-- 9. KONTAKT — enhanced -->
 <section class="kontakt" id="kontakt">
   <div class="container">
-    <div class="section-label">Ihr Ansprechpartner</div>
-    <div class="section-title">Lassen Sie uns sprechen.</div>
-    <div class="section-subtitle">Kein Verkaufsdruck, kein Standardpitch. Wir hören zu, verstehen Ihre Anforderungen und zeigen Ihnen, was möglich ist.</div>
+    <div class="section-label">Ihre Ansprechpartner bei Empireon</div>
+    <div class="section-title">Sprechen Sie direkt mit den Menschen, die für Konzeption, Umsetzung und Betrieb verantwortlich sind.</div>
     <div class="kontakt-layout">
-      <div class="kontakt-person">
-        <div class="kontakt-person-photo">[ Platzhalter: Foto York ]</div>
-        <div class="kontakt-person-info">
-          <h4>York Schmidt zur Nedden</h4>
-          <div class="person-role">Geschäftsführer</div>
-          <a href="tel:+4941028954332">+49 4102 8954332</a>
-          <a href="mailto:szn@empireon.de">szn@empireon.de</a>
-          <a href="#">LinkedIn</a>
+      <div class="kontakt-persons">
+        <div class="kontakt-person">
+          <div class="kontakt-person-photo"><img src="assets/york_square.jpg" alt="York Schmidt zur Nedden"></div>
+          <div class="kontakt-person-info">
+            <h4>York Schmidt zur Nedden</h4>
+            <div class="person-role">Geschäftsführung</div>
+            <div class="person-focus">Strategie, Anwendungsfälle und Zusammenarbeit</div>
+            <a href="tel:+4941028954332">+49 4102 8954332</a>
+            <a href="mailto:szn@empireon.de">szn@empireon.de</a>
+            <a href="#">LinkedIn</a>
+          </div>
+        </div>
+        <div class="kontakt-person">
+          <div class="kontakt-person-photo"><img src="assets/michael_square.jpg" alt="Michael Dudenko"></div>
+          <div class="kontakt-person-info">
+            <h4>Michael Dudenko</h4>
+            <div class="person-role">Geschäftsführung</div>
+            <div class="person-focus">Technologie, Architektur und Integration</div>
+            <a href="tel:+4941028954332">+49 4102 8954332</a>
+            <a href="mailto:md@empireon.de">md@empireon.de</a>
+            <a href="#">LinkedIn</a>
+          </div>
         </div>
       </div>
-      <div class="kontakt-right">
+      <div class="kontakt-details">
         <div class="kontakt-cards-row">
           <div class="kontakt-card">
             <div class="kontakt-card-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
             <h4>Adresse</h4>
-            <p>Empireon AI GmbH<br>Kornkamp 2<br>22926 Ahrensburg</p>
+            <p>Empireon AI GmbH<br>Ahrensfelder Stieg 9<br>22926 Ahrensburg</p>
           </div>
           <div class="kontakt-card">
             <div class="kontakt-card-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
@@ -641,6 +660,7 @@ footer { background: var(--tiefblau); padding: 36px 24px; border-top: 1px solid 
   </div>
 </section>
 
+<!-- closing kontakt-details div -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
