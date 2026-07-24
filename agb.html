@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AGB — Empireon AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --tiefblau: #071126;
+  --tiefblau-flaeche: #0B2244;
+  --akzent: #1E6FB8;
+  --cyan: #4FC3E0;
+  --neutral: #E4EBF3;
+  --weiss: #FFFFFF;
+  --text: #1a1a2e;
+  --text-light: #555;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 26px; color: var(--text); background: var(--neutral); }
+
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  background: var(--tiefblau); padding: 0; height: 60px;
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 24px;
+  height: 100%; display: flex; justify-content: space-between; align-items: center;
+}
+.logo { display: block; text-decoration: none; }
+.logo img { height: 36px; width: auto; }
+.nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+.nav-links a { text-decoration: none; color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--weiss); }
+.nav-cta { background: var(--akzent) !important; color: var(--weiss) !important; padding: 8px 20px; border-radius: 8px; text-transform: none !important; font-size: 14px !important; }
+
+.legal-content {
+  max-width: 800px; margin: 0 auto; padding: 120px 24px 72px;
+}
+.legal-content h1 {
+  font-size: 32px; font-weight: 700; color: var(--tiefblau); margin-bottom: 8px;
+}
+.legal-content .legal-date {
+  font-size: 14px; color: var(--text-light); margin-bottom: 32px;
+}
+.legal-content h2 {
+  font-size: 20px; font-weight: 600; color: var(--tiefblau); margin-top: 36px; margin-bottom: 12px;
+}
+.legal-content h3 {
+  font-size: 17px; font-weight: 600; color: var(--tiefblau); margin-top: 24px; margin-bottom: 8px;
+}
+.legal-content p {
+  margin-bottom: 16px; color: var(--text); line-height: 28px;
+}
+.legal-content ul {
+  margin-bottom: 16px; padding-left: 24px;
+}
+.legal-content ul li {
+  margin-bottom: 8px; line-height: 28px; color: var(--text);
+}
+.legal-content a { color: var(--akzent); text-decoration: none; }
+.legal-content a:hover { text-decoration: underline; }
+
+footer { background: var(--tiefblau); padding: 36px 24px; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+.footer-brand .footer-logo { margin-bottom: 12px; }
+.footer-brand .footer-logo img { height: 32px; width: auto; }
+.footer-brand p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 20px; max-width: 300px; }
+.footer-col h5 { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.footer-col a { display: block; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 14px; margin-bottom: 6px; transition: color 0.2s; }
+.footer-col a:hover { color: var(--weiss); }
+.footer-bottom {
+  max-width: 1200px; margin: 24px auto 0; padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 13px; color: rgba(255,255,255,0.3);
+  display: flex; justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+  .nav-links { display: none; }
+  .legal-content h1 { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/logo-white.png" alt="Empireon AI Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#warum">Warum wir</a></li>
+      <li><a href="index.html#gruender">Team</a></li>
+      <li><a href="index.html#loesung">Lösung</a></li>
+      <li><a href="index.html#sicherheit">Sicherheit</a></li>
+      <li><a href="index.html#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="legal-content">
+  <h1>Allgemeine Geschäftsbedingungen (AGB)</h1>
+  <p class="legal-date">Stand: 22.12.2025</p>
+
+  <p>Diese AGB gelten für alle Verträge zwischen der Empireon GmbH (nachfolgend „Empireon" oder „Anbieter") und ihren Geschäftskunden (nachfolgend „Kunde") über Leistungen der Empireon. Sie richten sich ausschließlich an Unternehmer im Sinne von § 14 BGB; Verbraucher (§ 13 BGB) sind von diesem Angebot ausgeschlossen. Empireon bietet AI-basierte Sprachdialog-Lösungen, Beratung und Betrieb von Softwarearchitekturen als B2B-Services in der DACH-Region an. Die Verträge werden auf Grundlage dieser AGB geschlossen. Abweichende Geschäftsbedingungen des Kunden finden keine Anwendung, es sei denn, Empireon hat diesen ausdrücklich schriftlich zugestimmt.</p>
+
+  <h2>§ 1 Geltungsbereich und Vertragsgrundlagen</h2>
+
+  <h3>1. Geltungsbereich</h3>
+  <p>Diese AGB regeln Inhalt und Abwicklung aller Verträge über die von Empireon angebotenen Leistungen, insbesondere SaaS-Dienste und zugehörige Services, gegenüber Unternehmern im B2B-Modell. Sie gelten für alle aktuellen und zukünftigen Geschäftsbeziehungen zwischen Empireon und dem Kunden, selbst wenn bei späteren Verträgen nicht nochmals ausdrücklich auf sie Bezug genommen wird.</p>
+
+  <h3>2. Vertragsgrundlagen</h3>
+  <p>Vertragsgrundlagen sind – sofern vorhanden – das individuelle Angebot bzw. die Leistungsbeschreibung von Empireon, eine etwaige Leistungs- oder Produktbeschreibung auf der Webseite, die jeweils gültige Preisliste sowie diese AGB. Bei Widersprüchen gelten diese Dokumente in der genannten Reihenfolge (spezielle individuelle Vereinbarungen vor allgemeinen Geschäftsbedingungen). Änderungen der Leistungsbeschreibungen, Preislisten oder dieser AGB wird Empireon dem Kunden in Textform mitteilen. Widerspricht der Kunde solchen Änderungen nicht innerhalb von 14 Tagen ab Zugang der Mitteilung, gelten sie als genehmigt. Empireon wird den Kunden in der Änderungsmitteilung auf die Bedeutung seines Schweigens besonders hinweisen.</p>
+
+  <h3>3. Kein Widerrufsrecht</h3>
+  <p>Der Kunde bestätigt, Unternehmer zu sein. Die Vorschriften des Verbraucherschutzes finden keine Anwendung. Insbesondere ist ein Widerrufsrecht nach §§ 312g, 355 BGB ausgeschlossen, da der Vertrag nicht mit einem Verbraucher geschlossen wird.</p>
+
+  <h3>4. Begriffsdefinitionen</h3>
+  <p>Voice-AI-Agenten im Sinne dieser AGB sind AI-basierte Sprachassistenzsysteme (z. B. digitale Telefon-Assistenten), die telefonisch oder über andere Kanäle mit Menschen interagieren können. DSGVO-konforme Infrastruktur bedeutet, dass Empireon die Dienste auf Servern innerhalb des EWR oder unter Auftragsverarbeitungsverträgen betreibt, welche den Anforderungen der Datenschutz-Grundverordnung (DSGVO) entsprechen.</p>
+
+  <h2>§ 2 Vertragsgegenstand und Leistungsumfang</h2>
+
+  <h3>1. Leistungsangebot</h3>
+  <p>Empireon bietet dem Kunden verschiedene AI-Leistungen an, insbesondere:</p>
+  <ul>
+    <li><strong>SaaS-basierte Voice-AI-Agenten:</strong> Bereitstellung von cloudbasierten AI-Sprachassistenten (z. B. digitale Rezeptionistinnen, AI-Recruiter etc.) zur automatisierten Kommunikation via Telefon oder Chat. Diese Dienste werden als Software-as-a-Service (SaaS) bereitgestellt, inklusive einer webbasierten Verwaltungsoberfläche.</li>
+    <li><strong>Individuelle Programmierung &amp; Integration:</strong> Entwicklung kundenspezifischer Funktionen, Callcenter-Integrationen oder Anpassungen der AI-Dialoge an spezifische Bedürfnisse des Kunden. Dazu zählt auch die Einbindung von Schnittstellen zu Drittsystemen (CRM, Telefonanlagen etc.).</li>
+    <li><strong>Support-Pakete:</strong> Technischer Support und Wartungsleistungen je nach gebuchtem Paket (z. B. unterschiedliche Service-Level mit garantierten Reaktionszeiten).</li>
+    <li><strong>Consulting &amp; Training:</strong> Beratungsleistungen im Bereich Sprach-AI (Workshops, Trainings, Optimierung von Dialogflüssen) sowie Projektmanagement bei komplexen Einführungsprojekten.</li>
+    <li><strong>Hosting &amp; Infrastruktur:</strong> Betrieb der Voice-AI-Lösungen auf hochverfügbarer, DSGVO-konformer Infrastruktur. Empireon stellt die serverseitige Plattform bereit (inkl. Sprachverarbeitung, AI-Modelle und Datenspeicherung); der Kunde benötigt lediglich geeignete Endgeräte bzw. eine Internet-/Telefonverbindung für die Nutzung.</li>
+  </ul>
+
+  <h3>2. Leistungsbeschreibung</h3>
+  <p>Der konkrete Leistungsumfang ergibt sich aus der jeweiligen Vertragsvereinbarung (z. B. dem Angebot oder der Produktbeschreibung auf der Webseite). Nicht ausdrücklich in das Angebot einbezogene Informationen (z. B. mündliche Auskünfte, Präsentationsunterlagen oder öffentliche Aussagen) sind keine Beschaffenheitsgarantie oder Vertragsbestandteil. Der Kunde ist verpflichtet, die Leistungsbeschreibung vor Vertragsschluss auf Richtigkeit und Vollständigkeit für seine Anforderungen zu prüfen. Empireon schuldet eine fachgerechte Leistungserbringung nach dem zum Zeitpunkt des Vertragsschlusses üblichen Stand der Technik.</p>
+
+  <h3>3. SaaS-Betrieb und Verfügbarkeit</h3>
+  <p>Empireon betreibt die Voice-AI-Agenten als Cloud-Service und gewährleistet eine angemessene Verfügbarkeit der Systeme. Ein bestimmter dauerhafter Erfolgs- oder Leistungsgrad (z. B. 100% Fehlerfreiheit oder eine bestimmte Erkennungsquote der AI) wird – sofern nicht in einem separaten Service Level Agreement (SLA) garantiert – nicht geschuldet. Empireon ist berechtigt, zur Leistungserbringung Drittanbieter (z. B. Cloud-Telefonie, Rechenzentrumsbetreiber) als Subunternehmer einzusetzen, sofern diese vertraglich zur Einhaltung der datenschutzrechtlichen und sicherheitstechnischen Anforderungen verpflichtet sind (siehe Anhang Sub-Auftragsverarbeiter).</p>
+
+  <h3>4. Änderungen und Weiterentwicklung</h3>
+  <p>Empireon kann im Zuge technischer Weiterentwicklung Updates oder Upgrades der Voice-AI-Plattform durchführen, welche zu Verbesserungen, Anpassungen oder geringfügigen Änderungen in der Funktionsweise führen können. Empireon wird dabei die berechtigten Interessen des Kunden berücksichtigen und größere Änderungen mitteilen. Soweit Empireon gesetzlich zu Sicherheits-Updates oder Aktualisierungen verpflichtet ist (z. B. nach § 327f BGB für digitale Produkte gegenüber Verbrauchern), weist Empireon darauf hin, dass diese Pflicht im B2B-Verhältnis nicht automatisch gilt und hier vertraglich ausgeschlossen bzw. auf das notwendige Maß beschränkt wird.</p>
+
+  <h2>§ 3 Vertragsschluss und Testphasen</h2>
+
+  <h3>1. Vertragsschluss über die Website</h3>
+  <p>Die Darstellung von Standard-Voice-Agenten, Dienstleistungen oder Preisen auf der Empireon-Website stellt noch kein rechtlich bindendes Angebot dar, sondern eine Einladung zur Abgabe einer Bestellung. Der Kunde kann über die Webseite einen gewünschten Service oder Agenten konfigurieren und eine Bestellung absenden. Mit Absenden der Bestellung (durch Klick auf einen entsprechend gekennzeichneten Button) gibt der Kunde ein verbindliches Vertragsangebot ab. Empireon kann dieses Angebot innerhalb von 5 Werktagen annehmen, entweder durch ausdrückliche Auftragsbestätigung per E-Mail oder konkludent durch Bereitstellung des bestellten Dienstes. Erst mit dieser Annahme kommt der Vertrag zustande. Erhält der Kunde binnen 5 Werktagen keine Annahme, ist er an seine Bestellung nicht mehr gebunden.</p>
+
+  <h3>2. Individuelle Verträge</h3>
+  <p>Bei komplexen Projekten (z. B. Callcenter-Integration, umfangreiche Individualprogrammierung oder Beratungsprojekte) erfolgt der Vertragsschluss in der Regel durch Unterzeichnung eines individuellen Vertrags oder Angebots durch beide Parteien. Angebote von Empireon sind freibleibend und unverbindlich, soweit sie nicht ausdrücklich als verbindlich bezeichnet sind. Erteilt der Kunde auf Basis eines solchen Angebots einen Auftrag oder Auftragsteil (z. B. durch schriftliche Auftragserteilung oder Gegenzeichnung des Angebots), so bleibt Empireon's Annahmeerklärung vorbehalten. Der Vertrag kommt in diesem Fall erst durch schriftliche Auftragsbestätigung von Empireon oder durch Beginn der Leistungserbringung zustande.</p>
+
+  <h3>3. Testphasen und Pilotprojekte</h3>
+  <p>Die Parteien können eine Testphase (Pilotbetrieb) des Voice-AI-Systems vorsehen. Die Dauer und Bedingungen einer Testphase werden individuell vereinbart (z. B. 30 Tage kostenloser Testbetrieb mit eingeschränktem Funktionsumfang). Sofern nicht abweichend geregelt, gilt eine Testphase als unverbindlich und kann von beiden Seiten jederzeit vorzeitig beendet werden. Schließen die Parteien nach Ende der Testphase keinen Anschlussvertrag ab, endet die Leistungserbringung automatisch mit Ablauf der Testphase. Ist vereinbart, dass der Vertrag nach der Testphase automatisch in einen kostenpflichtigen Regelbetrieb übergeht, wird Empireon den Kunden rechtzeitig vor Ende der Testphase darauf hinweisen. Der Kunde kann bis zum Ende der Testphase erklären, dass er keinen Vertragsschluss wünscht – unterbleibt dies, gilt der Übergang zum kostenpflichtigen Betrieb als vereinbart.</p>
+
+  <h3>4. Textform und Kommunikation</h3>
+  <p>Rechtserhebliche Erklärungen und Anzeigen, die der Kunde gegenüber Empireon abgibt oder die Empireon gegenüber dem Kunden abzugeben hat (z. B. Kündigungen, Fristsetzungen, Mahnungen), bedürfen zumindest der Textform (E-Mail ausreichend), soweit gesetzlich nicht strengeres Formgebot besteht. Empireon kann Erklärungen an die letzte vom Kunden bekannt gegebene E-Mail-Adresse senden. Der Kunde soll Änderungen seiner Kontaktdaten unverzüglich mitteilen.</p>
+
+  <h2>§ 4 Pflichten von Empireon (Leistungserbringung)</h2>
+
+  <h3>1. Erfüllungspflicht</h3>
+  <p>Empireon erbringt die vertraglich vereinbarten Leistungen vertragsgemäß und mit fachgerechter Sorgfalt. Als Erfüllungsort für alle Leistungen gilt – soweit rechtlich zulässig – der Sitz von Empireon. Termine oder Fristen sind nur dann verbindlich, wenn sie ausdrücklich als verbindlich schriftlich zugesagt wurden; ansonsten sind Angaben zu Bereitstellungszeiten unverbindlich.</p>
+
+  <h3>2. Infrastruktur und Datenschutz</h3>
+  <p>Empireon stellt die Leistungen auf einer DSGVO-konformen Infrastruktur bereit, d.h. Serverstandorte liegen im Geltungsbereich der DSGVO (EU/EWR) oder es bestehen geeignete vertragliche Garantien (z. B. EU-Standardvertragsklauseln) bei Unterauftragsverarbeitern außerhalb des EWR. Empireon gewährleistet angemessene technische und organisatorische Maßnahmen zur Datensicherheit nach Art. 32 DSGVO (z. B. Verschlüsselung, Zugriffsbegrenzungen) zum Schutz der vom Kunden übermittelten Daten. Die Einhaltung der DSGVO wird während der gesamten Leistungserbringung sichergestellt. Sofern Empireon im Rahmen der Leistungserbringung personenbezogene Daten im Auftrag des Kunden verarbeitet (z. B. Anruferdaten, Gesprächsmitschnitte), handelt Empireon als Auftragsverarbeiter gemäß Art. 28 DSGVO und wird solche Daten nur gemäß dokumentierter Weisungen des Kunden verarbeiten. Hierfür werden die Parteien einen Auftragsverarbeitungsvertrag (AVV) abschließen, soweit gesetzlich erforderlich. Empireon stellt einen Muster-AVV zur Verfügung, der integraler Vertragsbestandteil werden kann.</p>
+
+  <h3>3. Support und Servicezeiten</h3>
+  <p>Im Rahmen gebuchter Supportpakete erbringt Empireon Unterstützungsleistungen (z. B. Fehlerbehebung, telefonischer Support, Beratung) gemäß der Beschreibung des Support-Pakets. Ohne gebuchtes Zusatzpaket steht dem Kunden der Standard-Support von Empireon zur Verfügung: dieser umfasst die Annahme von Störungsmeldungen per E-Mail oder Ticket-System während der gewöhnlichen Geschäftszeiten (werktags, z. B. Mo–Fr 9–17 Uhr, außer an gesetzlichen Feiertagen). Empireon bemüht sich, Störungen des Dienstes im Rahmen seiner betrieblichen Möglichkeiten zeitnah zu beheben. Eine garantierte Reaktions- oder Lösungszeit besteht im Standard-Support jedoch nicht, außer es wurde ausdrücklich eine SLA-Vereinbarung getroffen.</p>
+
+  <h3>4. Wartung und Downtime</h3>
+  <p>Empireon ist berechtigt, für planmäßige Wartungsarbeiten die Verfügbarkeit der SaaS-Dienste vorübergehend zu unterbrechen. Wartungsfenster werden – soweit planbar – außerhalb der üblichen Geschäftszeiten gelegt und mit angemessener Vorankündigung mitgeteilt. In dringenden Fällen (z. B. sicherheitskritische Updates) kann eine kurzfristige Unterbrechung erfolgen; Empireon wird den Kunden über solche Maßnahmen so früh wie möglich informieren. Während Wartungsfenstern steht der Dienst ggf. nicht zur Verfügung; Empireon bemüht sich aber um Minimierung der Ausfallzeiten.</p>
+
+  <h3>5. Third-Party-Services</h3>
+  <p>Soweit vereinbart, kann Empireon Leistungen Dritter in den Vertrag einbinden (z. B. Nutzung von Sprachdiensten, Cloud-Plattformen) und diese im Namen und auf Rechnung des Kunden beauftragen, oder in eigenem Namen für den Kunden. Solche vereinbarten Drittleistungen werden dem Kunden offengelegt. Diese Drittanbieter sind keine Erfüllungsgehilfen von Empireon, soweit sie dem Kunden unmittelbar Leistungen bereitstellen; Empireon haftet insoweit nur für sorgfältige Auswahl und Überwachung dieser Dienstleister (Selektionsverschulden), nicht jedoch für deren Leistung selbst.</p>
+
+  <h2>§ 5 Pflichten des Kunden und Nutzungsbedingungen</h2>
+
+  <h3>1. Mitwirkungspflichten</h3>
+  <p>Der Kunde wird alle erforderlichen Mitwirkungsleistungen rechtzeitig und auf eigene Kosten erbringen, damit Empireon die vertraglichen Leistungen erbringen kann. Insbesondere stellt der Kunde Empireon sämtliche notwendigen Informationen, Daten, Dokumente und Zugangsdaten zur Verfügung, die für die Einrichtung der AI-Lösungen oder für Integrationen nötig sind. Vom Kunden benannte Ansprechpartner sollen fachkundig und autorisiert sein, Entscheidungen zu treffen. Verzögert oder unterlässt der Kunde eine erforderliche Mitwirkung und verhindert oder verzögert sich dadurch die Leistungserbringung, gelten vereinbarte Leistungsfristen als entsprechend verlängert; Empireon kann den daraus entstehenden Mehraufwand oder Schaden ersetzt verlangen.</p>
+
+  <h3>2. Technische Anforderungen</h3>
+  <p>Der Kunde ist dafür verantwortlich, dass seine technische Infrastruktur (z. B. Internetzugang, Telefonanlage, Endgeräte) die Nutzung der Empireon-Dienste ermöglicht. Er wird die in der Leistungsbeschreibung genannten Systemvoraussetzungen erfüllen und etwaige Zugangsdaten, APIs oder Schnittstellen gemäß den Anleitungen von Empireon einrichten.</p>
+
+  <h3>3. Verantwortlichkeit für Inhalte</h3>
+  <p>Der Kunde kann eigene Inhalte in das System von Empireon einspielen, etwa FAQs, Dialogtexte, Audiodateien oder Datenbanken zur Beantwortung von Fragen. Für sämtliche vom Kunden bereitgestellten oder durch die Nutzung der AI erzeugten Inhalte ist ausschließlich der Kunde verantwortlich. Der Kunde gewährleistet, dass die von ihm gelieferten Inhalte sowie deren Nutzung im Rahmen des Services rechtmäßig sind und keine Rechte Dritter verletzen. Insbesondere dürfen keine rechtswidrigen, diskriminierenden, rassistischen, pornografischen, extremistischen, gewaltverherrlichenden oder bewusst irreführenden Inhalte bereitgestellt oder verarbeitet werden. Der Kunde verpflichtet sich ferner, keine Inhalte einzuspielen, die gegen geltende Wettbewerbs-, Verbraucher- oder Datenschutzgesetze verstoßen (z. B. unzulässige Werbung, Datenschutzverletzungen) oder die Empireon in Verruf bringen könnten.</p>
+  <p>Empireon ist nicht verpflichtet, die vom Kunden bereitgestellten Inhalte auf Rechtmäßigkeit zu überprüfen (§§ 8–10 TMG). Sollte Empireon Kenntnis von offensichtlich rechtswidrigen Inhalten erlangen, ist Empireon berechtigt, diese ohne Vorankündigung zu sperren oder zu löschen. Der Kunde stellt Empireon von allen Ansprüchen Dritter frei, die aus der Rechtswidrigkeit von vom Kunden bereitgestellten Inhalten resultieren, und trägt sämtliche in diesem Zusammenhang entstehenden Kosten (inkl. angemessener Rechtsverteidigungskosten).</p>
+
+  <h3>4. Nutzungsrechte an Inhalten</h3>
+  <p>Der Kunde räumt Empireon an den von ihm bereitgestellten Inhalten die nicht-exklusiven Rechte ein, diese zur Vertragserfüllung zu nutzen, zu vervielfältigen, zu verändern (z. B. Anpassung für die AI-Verarbeitung) und zu speichern, soweit dies zur Erbringung der Leistungen erforderlich ist. Empireon ist insbesondere berechtigt, die Inhalte in die AI-Systeme zu integrieren und zu diesem Zweck auch in Zwischenspeichern oder Datenbanken vorzuhalten. Eine Nutzung der Kundeninhalte zu anderen Zwecken erfolgt nicht ohne weitere Zustimmung des Kunden. Alle vom Kunden bereitgestellten Inhalte bleiben im Übrigen Eigentum des Kunden; Empireon erwirbt daran keine weitergehenden Rechte.</p>
+
+  <h3>5. Datenschutz und Einwilligungen</h3>
+  <p>Der Kunde ist dafür verantwortlich, die datenschutzrechtlichen Vorgaben gegenüber seinen Endnutzern einzuhalten. Sofern über die Voice-AI-Agenten personenbezogene Daten von Dritten (z. B. Kundendaten, Gesprächsinhalte von Anrufern) erhoben, verarbeitet oder gespeichert werden, hat der Kunde sicherzustellen, dass hierfür eine Rechtsgrundlage nach Art. 6 DSGVO vorliegt (z. B. Einwilligung der Betroffenen oder Erfüllung eines Vertrags). Der Kunde wird seine Kunden/Anrufer etwa durch eine Datenschutzerklärung oder Ansage zu Beginn des Gesprächs über die wesentlichen Fakten informieren (Einsatz einer AI, Speicherung von Gesprächen, Zweck der Verarbeitung etc.), soweit dies gesetzlich erforderlich ist. Falls gesetzlich vorgeschrieben (z. B. bei Aufzeichnung von Telefonaten in bestimmten Jurisdiktionen), sorgt der Kunde dafür, dass die betroffene Person vorab ihre Einwilligung erteilt. Empireon stellt dem Kunden auf Wunsch Texte und Hinweise zur Verfügung, um die Transparenz- und Informationspflichten leichter zu erfüllen.</p>
+
+  <h3>6. Transparenz bei AI-Nutzung</h3>
+  <p>Der Kunde darf die Voice-AI-Agenten nicht so einsetzen, dass für die Endnutzer der Eindruck entsteht, sie kommunizierten mit einer natürlichen Person, obwohl tatsächlich eine AI antwortet. Gegebenenfalls ist der Kunde gesetzlich verpflichtet, darauf hinzuweisen, dass es sich um ein automatisiertes System handelt. Insbesondere gemäß der absehbaren Vorgaben des EU AI Act (EU-Verordnung über Künstliche Intelligenz) müssen Nutzer darüber informiert werden, dass sie es mit einer AI zu tun haben. Der Kunde wird daher – spätestens sobald entsprechende Pflichten in Kraft treten – geeignete Maßnahmen treffen, z. B. eine Initialansage wie „Ich bin ein digitaler Assistent", um diese Transparenzpflicht zu erfüllen. Empireon unterstützt den Kunden durch technische Optionen (z. B. konfigurierbare Begrüßungstexte) bei der Umsetzung solcher Vorgaben.</p>
+
+  <h3>7. Nutzungsrestriktionen</h3>
+  <p>Der Kunde darf die Dienste von Empireon nur im vertraglich vereinbarten Umfang und für eigene geschäftliche Zwecke nutzen. Eine Weitervermietung oder Weitervertrieb der Dienste an Dritte ist nur mit vorheriger schriftlicher Zustimmung von Empireon gestattet. Der Kunde wird die Zugangsdaten zu Empireon-Systemen vertraulich behandeln und vor dem Zugriff Unbefugter schützen. Er ist verpflichtet, Empireon unverzüglich zu informieren, wenn der Verdacht eines Missbrauchs der Zugangsdaten besteht oder unbefugte Dritte Zugang zu den Diensten erlangt haben.</p>
+
+  <h3>8. Verbotene Nutzungen</h3>
+  <p>Der Kunde darf die Dienste nicht zu Zwecken einsetzen, die gesetzeswidrig sind oder Rechte Dritter verletzen. Untersagt ist insbesondere:</p>
+  <ul>
+    <li>die Nutzung der Voice-AI-Agenten für unerlaubte Werbeanrufe (Spam-Telefonate) oder zum Ausspielen rechtswidriger Inhalte,</li>
+    <li>jegliche Form von Monitoring, Scanning oder Penetrationstests der Empireon-Systeme ohne vorherige Zustimmung (keine Beeinträchtigung der Systemintegrität),</li>
+    <li>Reverse Engineering der Software oder Umgehung von Sicherheitsmechanismen, soweit nicht gesetzlich zulässig,</li>
+    <li>ein über das vertraglich vereinbarte Maß hinausgehender ressourcenintensiver Gebrauch, der die Stabilität der Plattform gefährdet (z. B. Massenanfragen, Stresstests) – außer dies wurde vereinbart,</li>
+    <li>Verwendung der AI-Systeme in kritischen Bereichen, in denen Fehler der AI zu Personen- oder Sachschäden führen könnten (z. B. Notrufsysteme), ohne dass Empireon dem ausdrücklich zugestimmt hat.</li>
+  </ul>
+
+  <h3>9. Verstoß gegen Pflichten</h3>
+  <p>Bei einem Verstoß des Kunden gegen die vorstehenden Pflichten ist Empireon berechtigt, den betreffenden Service vorübergehend zu sperren, sofern der Verstoß hierdurch abstellbar ist (z. B. Sperren rechtswidriger Inhalte oder von Zugängen bei Missbrauch). Empireon wird den Kunden – soweit möglich vorher, ansonsten unverzüglich nach der Sperrung – über den Vorgang informieren, damit der Kunde Abhilfe schaffen kann. Weitergehende Rechte von Empireon (z. B. außerordentliche Kündigung und Schadensersatz) bleiben unberührt.</p>
+
+  <h2>§ 6 Preise, Vergütung und Abrechnung</h2>
+
+  <h3>1. Preisbestandteile</h3>
+  <p>Die Vergütung der Leistungen von Empireon kann aus einmaligen, nutzungsabhängigen und laufenden Gebühren bestehen. Je nach gewähltem Leistungsumfang können insbesondere folgende Preisbestandteile anfallen:</p>
+  <ul>
+    <li><strong>Setup-Pauschale:</strong> Einmalige Pauschalbeträge für die Einrichtung eines AI-Systems oder für Individual-Programmierung (z. B. für die Erstanpassung eines digitalen Assistenten an die Anforderungen des Kunden). Diese Pauschale deckt alle hierfür notwendigen Leistungen ab, sofern im Angebot nicht anders angegeben.</li>
+    <li><strong>Nutzungsabhängige Minutenpreise:</strong> Gebühren pro Nutzungsminute oder pro Anruf für die tatsächliche Inanspruchnahme der Sprach-AI (z. B. pro Minute Telefongespräch). Diese können nach Volumen gestaffelt sein (sinkender Minutenpreis bei höherem Abnahmevolumen). Empireon kann hierfür verschiedene Volumenpakete anbieten (z. B. Kontingente von Minuten pro Monat zu Fixpreisen). Nicht verbrauchte Minuten eines Zeitraums verfallen am Periodenende, sofern nichts Abweichendes vereinbart wurde.</li>
+    <li><strong>Monatliche Grundgebühr:</strong> Laufende Fixbeträge (Abonnements) für den Betrieb und die Nutzung der SaaS-Plattform sowie den allgemeinen Support. Diese decken beispielsweise Hosting, Wartung und die Nutzung der Standardfunktionen ab. Je nach Paket können hierin bestimmte Minutenkontingente oder Zusatzleistungen inkludiert sein.</li>
+    <li><strong>Support- und Zusatzleistungen:</strong> Entgelte für optionale Supportpakete (z. B. Premium-Support) oder Consulting-Leistungen werden gemäß Vereinbarung entweder pauschal, nach Stundenaufwand oder gemäß gesonderter Preisliste berechnet. Falls ein Stundenkontingent (Stundenpool) vereinbart ist, steht es dem Kunden innerhalb eines definierten Zeitraums (z. B. 3 Monate) zur Verfügung; nicht abgerufene Stunden verfallen danach ersatzlos, sofern nichts anderes vereinbart wurde.</li>
+    <li><strong>Rabatte und Aktionen:</strong> Gewährte Rabatte, Boni oder Promotion-Aktionen sind einmalige Vergünstigungen und gelten nur für den jeweils benannten Aktionszeitraum oder Leistungsumfang. Ein Anspruch des Kunden, solche Vergünstigungen über den Aktionszeitraum hinaus oder für weitere Verträge zu erhalten, besteht nicht, sofern nicht ausdrücklich zugesichert. Empireon behält sich vor, Aktionen zeitlich oder mengenmäßig zu begrenzen und bei Verstößen gegen Aktionsbedingungen (z. B. unzulässige Kombination mehrerer Rabatte) einen gewährten Rabatt rückwirkend zu widerrufen.</li>
+  </ul>
+
+  <h3>2. Preisangaben und Umsatzsteuer</h3>
+  <p>Sämtliche Preise verstehen sich, sofern nicht anders ausgewiesen, in Euro ab Geschäftssitz von Empireon zzgl. der gesetzlichen Umsatzsteuer. Preisangaben auf der Webseite oder in Prospekten sind freibleibend; maßgeblich sind die im individuellen Angebot oder der Auftragsbestätigung genannten Preise.</p>
+
+  <h3>3. Abrechnung und Zahlungsmodalitäten</h3>
+  <p>Empireon stellt dem Kunden die vereinbarten Entgelte regelmäßig, bei wiederkehrenden Leistungen monatlich im Voraus oder nachschüssig – je nach Vereinbarung – in Rechnung. Nutzungsabhängige Entgelte (z. B. Minutenpreise) werden entweder monatlich nachträglich gemäß tatsächlicher Nutzung oder gemäß dem gebuchten Paket berechnet. Vergütungen für einmalige Leistungen (z. B. Setup, Projektleistungen) werden, sofern nichts Abweichendes vereinbart ist, mit Bereitstellung bzw. Abschluss der Leistung fällig.</p>
+  <ul>
+    <li><strong>Fälligkeit:</strong> Rechnungen von Empireon sind, soweit nicht anders auf der Rechnung vermerkt, sofort und ohne Abzug ab Rechnungsdatum zur Zahlung fällig. Der Kunde gerät ohne weitere Mahnung in Verzug, wenn er nicht innerhalb von 7 Kalendertagen nach Zugang der Rechnung Zahlung leistet.</li>
+    <li><strong>Zahlungsarten:</strong> Zahlungen erfolgen per Überweisung auf das in der Rechnung angegebene Konto von Empireon, sofern nichts anderes (z. B. SEPA-Lastschrift, Kreditkartenzahlung oder Zahlungsdienstleister) vereinbart wurde. Empireon ist berechtigt, für bestimmte Leistungen (insbesondere Online-Bestellungen) Vorkasse zu verlangen oder Zahlung über ein Online-Bezahlsystem mit sofortiger Belastung vorzusehen. Der Kunde trägt seine eigenen Bankgebühren (z. B. für Auslandstransaktionen) selbst.</li>
+    <li><strong>Einwände gegen Rechnungen:</strong> Einwände gegen die Höhe abgerechneter Entgelte muss der Kunde innerhalb von 8 Wochen nach Zugang der Rechnung in Textform erheben. Unterlässt er dies, gilt die Rechnung als genehmigt. Empireon wird den Kunden in der Rechnung auf die Bedeutung seines Schweigens hinweisen. Gesetzliche Ansprüche des Kunden bei berechtigten Einwänden nach Fristablauf (z. B. Bereicherungsausgleich) bleiben unberührt.</li>
+  </ul>
+
+  <h3>4. Preisanpassungen</h3>
+  <p>Bei langfristigen Verträgen mit laufenden Zahlungen ist Empireon berechtigt, die Preise unter den folgenden Voraussetzungen anzupassen:</p>
+  <ul>
+    <li><strong>Jährliche Preisindex-Anpassung:</strong> Bei Verträgen mit unbestimmter Laufzeit oder automatischer Verlängerung kann Empireon einmal pro Kalenderjahr die laufenden Gebühren an eine Kostenentwicklung anpassen. Die Anpassung orientiert sich an der Entwicklung des Verbraucherpreisindex (VPI) oder einem vergleichbaren Index seit der letzten Preisfestsetzung. Erhöht sich der Index, darf Empireon die Preise entsprechend anheben; bei Sinken des Index wird Empireon dies durch Preissenkung oder Verzicht auf eine Erhöhung berücksichtigen. Empireon wird dem Kunden eine Preisanpassung mindestens 6 Wochen im Voraus in Textform ankündigen. Übersteigt die Erhöhung insgesamt 5% des bisherigen Preises, hat der Kunde das Recht, den Vertrag zum Wirksamwerden der Preiserhöhung außerordentlich zu kündigen. Macht der Kunde davon keinen Gebrauch, gilt die Änderung als genehmigt.</li>
+    <li><strong>Kostensteigerungen:</strong> Unabhängig vom Index ist Empireon zu einer außerplanmäßigen Preiserhöhung berechtigt, wenn unvorhersehbare Kostensteigerungen eintreten, die nicht von Empireon zu beeinflussen sind (z. B. Erhöhung von Bezugs- oder Energiekosten, Einführung/Erhöhung staatlicher Abgaben auf die Leistungen) und die Kosten der Leistungserbringung um > 3 % erhöhen. Empireon wird dem Kunden die Gründe und den Umfang der Erhöhung nachweisen. Auch hier gilt ein Kündigungsrecht des Kunden zum Änderungszeitpunkt, sofern die Erhöhung über 5% liegt.</li>
+  </ul>
+
+  <h3>5. Aufrechnung und Zurückbehaltung</h3>
+  <p>Dem Kunden steht ein Aufrechnungsrecht nur zu, wenn seine Gegenansprüche rechtskräftig festgestellt oder unbestritten sind. Die Aufrechnung mit bestrittenen oder nicht rechtskräftig festgestellten Gegenforderungen ist ausgeschlossen. Ein Zurückbehaltungsrecht kann der Kunde nur geltend machen, soweit es auf demselben Vertragsverhältnis beruht. Die Rechte des Kunden aus § 320 BGB bleiben unberührt, solange Empireon ihren wesentlichen Leistungspflichten nicht nachgekommen ist.</p>
+
+  <h3>6. Zahlungsverzug</h3>
+  <p>Bei Zahlungsverzug des Kunden ist Empireon berechtigt, Verzugszinsen in gesetzlicher Höhe zu berechnen. Gegenüber Unternehmern betragen die gesetzlichen Verzugszinsen 9 Prozentpunkte über dem Basiszinssatz (§ 288 Abs. 2 BGB). Empireon behält sich vor, einen weitergehenden Verzugsschaden geltend zu machen (z. B. Kosten für Rechtsverfolgung, Inkasso). Insbesondere hat der Kunde die notwendigen Mahn- und Inkassospesen zu ersetzen. Gerät der Kunde mit zahlungsfälligen Beträgen aus diesem oder anderen Verträgen mit Empireon in nicht unerheblichem Umfang in Verzug und zahlt auch nach Mahnung mit angemessener Nachfrist nicht, ist Empireon berechtigt, sämtliche noch ausstehenden Leistungen bis zur Begleichung zurückzubehalten und/oder nach weiterer Fristsetzung den Vertrag außerordentlich zu kündigen. Im Fall einer berechtigten außerordentlichen Kündigung durch Empireon aufgrund Zahlungsverzugs ist Empireon berechtigt, Schadensersatz zu verlangen, insbesondere den entgangenen Gewinn in Form der Grundgebühren, der bis zum Ende der regulären Vertragslaufzeit angefallen wäre.</p>
+
+  <h3>7. Eigentumsvorbehalt</h3>
+  <p>Soweit Empireon im Rahmen der Vertragserfüllung auch Lieferungen von Hardware oder sonstigen Waren an den Kunden vornimmt (z. B. Versand von Zubehör, Dokumentationen auf Datenträgern), bleiben diese bis zur vollständigen Bezahlung aller entstehenden Forderungen aus dem Vertrag Eigentum von Empireon. Der Kunde hat Empireon im Falle einer Pfändung oder anderer Zugriffe Dritter auf die Vorbehaltsware unverzüglich zu benachrichtigen. Eine Veräußerung der Vorbehaltsware vor Eigentumsübergang ist nur mit vorheriger Zustimmung zulässig; etwaige daraus resultierende Forderungen gegen Dritte tritt der Kunde schon jetzt sicherungshalber in Höhe des offenen Zahlungsbetrags an Empireon ab.</p>
+
+  <h3>8. Leistungsverweigerungsrecht</h3>
+  <p>Empireon behält sich im Falle von begründeten Zweifeln an der Zahlungsfähigkeit oder -willigkeit des Kunden vor, Leistungen nur noch gegen Vorkasse oder ausreichende Sicherheit (z. B. Bankbürgschaft) zu erbringen. Dies gilt insbesondere, wenn der Kunde wiederholt in Verzug geraten ist oder sich seine Vermögensverhältnisse wesentlich verschlechtert haben. Sollte der Kunde einer entsprechenden Aufforderung zur Sicherheitsleistung nicht binnen angemessener Frist nachkommen, kann Empireon die weitere Vertragserfüllung verweigern oder den Vertrag aus wichtigem Grund kündigen.</p>
+
+  <h2>§ 7 Nutzungsrechte und geistiges Eigentum</h2>
+
+  <h3>1. Rechte an der Software</h3>
+  <p>Sämtliche Urheberrechte, Patente, Marken und sonstige Schutzrechte an der von Empireon bereitgestellten Software, Plattform und Dokumentation (einschließlich etwaiger Anpassungen, Updates und Erweiterungen) liegen ausschließlich bei Empireon bzw. deren Lizenzgebern. Der Kunde erhält für die Vertragsdauer ein einfaches (nicht-ausschließliches), nicht übertragbares Recht, die Empireon-Software und Dienste gemäß Vertrag zu nutzen. Dieses Nutzungsrecht ist auf die internen Geschäftszwecke des Kunden beschränkt. Dem Kunden ist es insbesondere nicht gestattet, die Software anderweitig zu verwerten, zu vermieten, zu verleasen oder Dritten außerhalb seines Unternehmens zugänglich zu machen, außer soweit in diesen AGB oder einem schriftlichen Vertrag ausdrücklich erlaubt.</p>
+
+  <h3>2. Open-Source- und Drittsoftware</h3>
+  <p>Die Empireon-Dienste können Komponenten enthalten, die Dritten gehören oder quelloffen (Open Source) sind. Für solche Komponenten gelten ergänzend die jeweiligen Lizenzbedingungen der Rechteinhaber, die Empireon dem Kunden auf Anfrage zur Verfügung stellt. Soweit Open-Source-Lizenzen dem Kunden weitergehende Nutzungsrechte einräumen (z. B. Einsicht in den Quellcode bestimmter Bibliotheken), bleiben diese Lizenzen unberührt und gehen im Konfliktfall diesen AGB vor.</p>
+
+  <h3>3. Eigene Entwicklung des Kunden</h3>
+  <p>Nutzt der Kunde bereitgestellte Schnittstellen (APIs) oder Tools von Empireon, um eigene Erweiterungen oder Integrationen zu entwickeln, liegen die Rechte an diesen kundeneigenen Entwicklungen beim Kunden. Empireon erhebt an solchen kundeneigenen Erweiterungen keinerlei Rechte, allerdings darf der Kunde nur auf Grundlage der offiziellen API- und Dokumentationsvorgaben entwickeln. Empireon übernimmt keine Verantwortung für Fehler oder Sicherheitsrisiken, die durch vom Kunden selbst erstellte oder beauftragte Zusatzsoftware entstehen, und der Kunde stellt Empireon insoweit von Ansprüchen Dritter frei.</p>
+
+  <h3>4. Feedback und Vorschläge</h3>
+  <p>Gibt der Kunde Empireon Feedback, Verbesserungsvorschläge oder Ideen zur Software, so darf Empireon diese unentgeltlich für die Weiterentwicklung der Produkte nutzen. Hieraus erwachsen dem Kunden keine Rechte oder Ansprüche (z. B. auf Vergütung oder Exklusivität).</p>
+
+  <h3>5. Referenznennung</h3>
+  <p>Empireon ist berechtigt, den Firmennamen und das Logo des Kunden für Referenzzwecke zu nutzen (z. B. Nennung als Referenzkunde auf der Website oder in Präsentationen), sofern der Kunde dem nicht ausdrücklich widerspricht. Etwaige Pressemitteilungen über die Kooperation werden die Parteien vorab einvernehmlich abstimmen.</p>
+
+  <h2>§ 8 Abnahme von Leistungen (bei Individualprogrammierung)</h2>
+
+  <h3>1. Anwendungsbereich</h3>
+  <p>Die folgenden Bestimmungen gelten, sofern Empireon für den Kunden Werkleistungen erbringt, die in einem fertigen Arbeitsergebnis bestehen (z. B. Entwicklung einer kundenspezifischen Software-Komponente, abgeschlossene Integrationsprojekte). Für fortlaufende oder SaaS-Leistungen, die keiner Abnahme fähig sind (Dienstvertrag), findet dieses § 8 keine Anwendung.</p>
+
+  <h3>2. Abnahmepflicht</h3>
+  <p>Der Kunde ist verpflichtet, von Empireon gelieferte Arbeitsergebnisse – insbesondere Software-Module, Konfigurationen oder Dokumentationen – nach Bereitstellung unverzüglich zu überprüfen und binnen 14 Kalendertagen entweder freizugeben (abzunehmen) oder Mängel schriftlich gegenüber Empireon anzuzeigen. Erfolgt innerhalb dieser Frist keine schriftliche Mängelrüge und hat der Kunde die gelieferte Leistung in Gebrauch genommen (z. B. Produktivschaltung eines entwickelten Voice-Agenten), so gilt das Arbeitsergebnis als abgenommen. Empireon wird den Kunden bei Lieferung auf die Bedeutung seines Verhaltens besonders hinweisen.</p>
+
+  <h3>3. Mängel bei Abnahme</h3>
+  <p>Bei erheblichen Mängeln, die die vertragsgemäße Nutzung des Arbeitsergebnisses wesentlich beeinträchtigen, kann der Kunde die Abnahme verweigern und Empireon zur Nachbesserung auffordern. Empireon hat die Mängel innerhalb angemessener Frist zu beheben und das Arbeitsergebnis erneut zur Abnahme vorzulegen. Bei nur unerheblichen Mängeln darf der Kunde die Abnahme nicht verweigern; diese Mängel wird Empireon im Rahmen der Gewährleistung beseitigen. Die Abnahme gilt auch als erfolgt, wenn der Kunde die entwickelte Leistung ohne Abnahme ausdrücklich abzulehnen, weiter nutzt oder in Betrieb belässt.</p>
+
+  <h3>4. Teilabnahmen</h3>
+  <p>Empireon kann nach Absprache Teilleistungen gesondert zur Abnahme vorlegen, sofern dies sinnvoll abgrenzbare Leistungspakete sind (z. B. Abschluss einer Projektphase). Eine Teilabnahme hat zur Folge, dass die Gewährleistungsfrist für die abgenommene Teilleistung ab dem Zeitpunkt der Teilabnahme zu laufen beginnt.</p>
+
+  <h2>§ 9 Gewährleistung und Sachmängelhaftung</h2>
+
+  <h3>1. Gewährleistungsrecht</h3>
+  <p>Für die Rechte des Kunden bei Sach- und Rechtsmängeln gelten – soweit nicht in diesen AGB abweichend geregelt – die gesetzlichen Vorschriften des Werkvertragsrechts (§§ 631 ff. BGB) bei Werkleistungen bzw. des Mietvertragsrechts (§§ 535 ff. BGB) bei SaaS-Leistungen. Empireon leistet demnach Gewähr durch Nacherfüllung (Mängelbeseitigung oder Ersatzlieferung) nach eigener Wahl. Schlägt die Nacherfüllung fehl oder ist sie dem Kunden unzumutbar, kann der Kunde unter den gesetzlichen Voraussetzungen den Preis mindern oder – bei erheblichen Mängeln im Werkvertragsfall – vom Vertrag zurücktreten. Bei nur unwesentlichen Mängeln besteht kein Rücktrittsrecht.</p>
+
+  <h3>2. Beschaffenheit der AI-Leistung</h3>
+  <p>Der Kunde nimmt zur Kenntnis, dass AI-Systeme naturgemäß probabilistische Ergebnisse liefern und nicht in allen Fällen fehlerfrei oder 100% korrekt arbeiten. Eine bestimmte Genauigkeit der Sprach- oder Spracherkennung oder Fehlerfreiheit der AI-Antworten kann von Empireon nicht garantiert werden. Abweichungen in der Antwortqualität stellen daher für sich genommen keinen Mangel dar, solange die grundlegenden vereinbarten Funktionalitäten gegeben sind. Empireon gewährleistet jedoch, dass das AI-System im Wesentlichen wie vertraglich beschrieben funktioniert (z. B. dass ein digitaler Assistent Anrufe entgegennimmt und Standardanliegen nach definierten Prozessen bearbeitet).</p>
+
+  <h3>3. Mängelanzeige und Untersuchungsobliegenheit</h3>
+  <p>Der Kunde hat offensichtliche Mängel der Leistungen von Empireon unverzüglich, spätestens jedoch innerhalb von 14 Tagen nach Kenntnis schriftlich anzuzeigen. Unterlässt er dies, entfallen insoweit seine Gewährleistungsrechte. Handelt es sich beim Kunden um einen Kaufmann, bleibt § 377 HGB unberührt – d.h. er trifft die Pflicht, gelieferte Waren/Leistungen unverzüglich zu untersuchen und etwaige Mängel unverzüglich zu rügen.</p>
+
+  <h3>4. Gewährleistungsfrist</h3>
+  <p>Die Verjährungsfrist für Gewährleistungsansprüche beträgt – außer in Fällen von Vorsatz – 12 Monate ab Abnahme bzw. ab Bereitstellung der Leistung. Bei fortlaufenden Leistungen (Dauerschuldverhältnissen) beginnt die Frist nicht zu laufen, solange das Vertragsverhältnis besteht; insoweit können Mängel während der Vertragsdauer jederzeit gerügt werden, verjähren aber spätestens 12 Monate nach Vertragsende. Für Arglist und grobes Verschulden sowie für Ansprüche nach dem Produkthaftungsgesetz und für Personenschäden gelten die gesetzlichen Verjährungsfristen.</p>
+
+  <h3>5. Aktualisierungspflichten</h3>
+  <p>Soweit nicht ausdrücklich vereinbart, schuldet Empireon keine über die Vertragslaufzeit hinausgehenden Updates oder Funktionsaktualisierungen der bereitgestellten Software. Eine gesetzliche Pflicht zur Bereitstellung von Sicherheitsupdates oder Aktualisierungen im B2B-Verhältnis (analog § 327f BGB im Verbraucherrecht) wird hiermit vertraglich abbedungen, soweit zulässig. Der Kunde ist dafür verantwortlich, im Rahmen seiner Einflussmöglichkeiten (z. B. bei On-Premise-Komponenten oder Endgeräten) für aktuelle Softwarestände und Sicherheitsupdates zu sorgen.</p>
+
+  <h3>6. Rechtsmängel</h3>
+  <p>Empireon gewährleistet, dass die von ihr erbrachten Leistungen keine Rechte Dritter verletzen. Macht ein Dritter gegenüber dem Kunden Ansprüche wegen der Verletzung von Schutzrechten durch die Leistung geltend, wird der Kunde Empireon unverzüglich informieren. Empireon wird nach eigener Wahl und auf eigene Kosten entweder die Rechtsverletzung beseitigen (das betreffende Leistungsteil ändern oder austauschen) oder dem Kunden die rechtliche Befugnis verschaffen, die Leistung wie vereinbart zu nutzen (z. B. durch Lizenzerwerb). Gelingt dies innerhalb angemessener Frist nicht, stehen dem Kunden die gesetzlichen Rechtsbehelfe (Minderung oder Rücktritt) zu. Für Schadensersatzansprüche gelten die Beschränkungen in § 10 dieser AGB.</p>
+
+  <h2>§ 10 Haftung und Haftungsbeschränkung</h2>
+
+  <h3>1. Haftung von Empireon</h3>
+  <p>Empireon haftet dem Kunden gegenüber in Fällen von Vorsatz und grober Fahrlässigkeit unbeschränkt nach den gesetzlichen Bestimmungen. Bei einfacher Fahrlässigkeit haftet Empireon – außer in den Fällen der Verletzung des Lebens, des Körpers oder der Gesundheit – nur für die Verletzung wesentlicher Vertragspflichten (Kardinalpflichten). Kardinalpflichten sind solche, deren Erfüllung die ordnungsgemäße Durchführung des Vertrages überhaupt erst ermöglicht und auf deren Einhaltung der Vertragspartner regelmäßig vertrauen darf. In diesen Fällen einfacher Fahrlässigkeit ist die Haftung von Empireon der Höhe nach begrenzt auf den vertragstypisch vorhersehbaren Schaden.</p>
+
+  <h3>2. Haftungsausschlüsse</h3>
+  <p>Soweit nicht in § 10 Abs. 1 etwas Abweichendes geregelt ist, ist eine Haftung von Empireon – gleich aus welchem Rechtsgrund – ausgeschlossen. Insbesondere haftet Empireon nicht für:</p>
+  <ul>
+    <li>mittelbare Schäden und Folgeschäden, wie z. B. entgangenen Gewinn, ausgebliebene Einsparungen, Produktionsausfälle oder Umsatzverluste des Kunden,</li>
+    <li>Datenverluste (es sei denn, Empireon hat die Vernichtung der Daten vorsätzlich oder grob fahrlässig verursacht und der Kunde hat sichergestellt, dass die verlorenen Daten mit vertretbarem Aufwand rekonstruiert werden können),</li>
+    <li>Fehler oder Ausfälle der AI-Leistung, sofern sie außerhalb des Einflussbereichs von Empireon liegen (z. B. Ausfälle von Kommunikationsnetzen, Dienste Dritter, unvorhersehbare Fehler aktueller AI-Modelle),</li>
+    <li>Schäden durch unsachgemäße Nutzung des Dienstes durch den Kunden oder Verstoß gegen seine Pflichten aus § 5 (z. B. Missbrauch der AI für rechtswidrige Zwecke, unautorisierte Änderungen am System),</li>
+    <li>Ansprüche Dritter gegen den Kunden, die aus der Nutzung der Leistungen resultieren (außer sofern in § 5 Abs. 3 abgedeckt und soweit Empireon die Verantwortung trägt).</li>
+  </ul>
+
+  <h3>3. Haftungsfreistellung durch Kunden</h3>
+  <p>Macht ein Dritter gegenüber Empireon Ansprüche geltend, die auf einem schuldhaften Verhalten oder einer Vertragsverletzung des Kunden beruhen (einschließlich Verstößen gegen Pflichten nach § 5, z. B. Bereitstellung rechtswidriger Inhalte), so ist der Kunde verpflichtet, Empireon von diesen Ansprüchen freizustellen. Dazu gehören auch die erforderlichen Kosten der Rechtsverteidigung. Empireon wird den Kunden über solche Ansprüche unverzüglich informieren und ihm, soweit zumutbar, Gelegenheit zur Abwehr der Ansprüche geben.</p>
+
+  <h3>4. Betriebszeit und Service Level</h3>
+  <p>Sofern Empireon dem Kunden gegenüber eine bestimmte Verfügbarkeit oder Betriebszeit des SaaS-Dienstes garantiert (z. B. 99% Uptime im Monatsmittel) und diese Verfügbarkeit unterschritten wird, richtet sich der Anspruch des Kunden ausschließlich nach der vereinbarten SLA-Regelung. In der Regel besteht der Ausgleich in einer Gutschrift auf das Konto des Kunden in definierter Höhe. Weitergehende Schadensersatzansprüche wegen Nichterreichens der garantierten Verfügbarkeit sind – außer in Fällen von Vorsatz oder grober Fahrlässigkeit – ausgeschlossen.</p>
+
+  <h3>5. Besondere Drittleistungen</h3>
+  <p>Soweit Empireon vereinbarungsgemäß Leistungen oder Produkte Dritter einbindet (z. B. Telefonie-Provider, Cloud-Dienste) und diese vertragsgegenständlich für den Kunden mit erbringt, haftet Empireon nicht für Mängel oder Ausfälle, die in der Sphäre dieser Dritten liegen. Empireon haftet insoweit lediglich für die sorgfältige Auswahl und Beauftragung der Drittanbieter. Erbringt der Kunde selbst gewisse Leistungen oder liefert Komponenten, für deren Funktion er verantwortlich ist (z. B. stellt Telefonanschlüsse bereit, integriert eigene AI-Module), so trägt Empireon für daraus entstehende Fehler keinerlei Haftung.</p>
+
+  <h3>6. Unabdingbare Haftung</h3>
+  <p>Die vorstehenden Haftungsbeschränkungen gelten nicht für die Haftung von Empireon wegen vorsätzlichen oder grob fahrlässigen Verhaltens, für garantierte Beschaffenheitsmerkmale, für Personenschäden (Verletzung von Leben, Körper, Gesundheit) oder nach dem Produkthaftungsgesetz. In diesen Fällen verbleibt es bei der gesetzlichen Haftung.</p>
+
+  <h3>7. Haftungsfrist</h3>
+  <p>Soweit die Haftung nach den vorstehenden Regelungen beschränkt oder ausgeschlossen ist, gilt dies auch für persönliche Haftung der gesetzlichen Vertreter, Angestellten und Erfüllungsgehilfen von Empireon. Schadenersatz- und Aufwendungsersatzansprüche des Kunden verjähren in 12 Monaten ab dem gesetzlichen Verjährungsbeginn, sofern nicht nach zwingendem Recht eine längere Verjährungsfrist gilt oder in diesem Vertrag abweichend geregelt (vgl. Gewährleistung).</p>
+
+  <h2>§ 11 Vertragslaufzeit, Verlängerung und Kündigung</h2>
+
+  <h3>1. Mindestlaufzeit</h3>
+  <p>Sofern im Vertrag nichts Abweichendes festgelegt ist, beträgt die anfängliche Vertragslaufzeit für laufende Leistungen (Abonnements) 12 Monate ab Vertragsbeginn. Bei bestimmten Produkten kann eine kürzere Mindestlaufzeit gelten (z. B. 3 Monate bei Testangeboten oder Promo-Tarifen); dies wird im Bestellprozess oder Angebot entsprechend ausgewiesen. Während der Mindestlaufzeit ist eine ordentliche Kündigung ausgeschlossen.</p>
+
+  <h3>2. Verlängerung</h3>
+  <p>Der Vertrag verlängert sich nach Ablauf der Mindestlaufzeit automatisch um jeweils 12 Monate (Verlängerungsperiode), sofern er nicht vom Kunden oder von Empireon mit 4 Wochen Frist zum Ende der jeweiligen Laufzeit gekündigt wird. Bei einem Test- oder Einführungsangebot mit kürzerer Laufzeit kann sich dieses einmalig um die reguläre Mindestlaufzeit verlängern, sofern keine fristgerechte Kündigung erfolgt – auch dies wird im Angebot klargestellt.</p>
+
+  <h3>3. Ordentliche Kündigung</h3>
+  <p>Nach Ablauf der Mindestlaufzeit ist der Vertrag für beide Parteien jederzeit mit einer Frist von 4 Wochen zum Monatsende ordentlich kündbar, sofern nichts Abweichendes vereinbart wurde. Kündigt der Kunde vorzeitig innerhalb einer laufenden Verlängerungsperiode, endet der Vertrag zum Ende dieses Zeitraums. Bereits im Voraus gezahlte Entgelte für Zeiträume nach Vertragsende werden vom Anbieter zeitanteilig erstattet, sofern keine andere Verrechnung (Gutschrift) vereinbart ist.</p>
+
+  <h3>4. Form der Kündigung</h3>
+  <p>Jede Kündigung bedarf zu ihrer Wirksamkeit der Textform (E-Mail ausreichend). Aus Beweisgründen wird dem Kündigenden empfohlen, eine Kündigung schriftlich per Einschreiben oder per E-Mail mit Lesebestätigung zu versenden. Empireon kann Kündigungsbestätigungen elektronisch (per E-Mail) übermitteln.</p>
+
+  <h3>5. Außerordentliche Kündigung</h3>
+  <p>Das Recht zur Kündigung aus wichtigem Grund bleibt für beide Parteien unberührt. Empireon kann insbesondere fristlos kündigen, wenn der Kunde trotz Mahnung mit angemessener Fristsetzung fortgesetzt gegen wesentliche Vertragspflichten verstößt oder andere wichtige Gründe vorliegen. Als wichtige Gründe auf Seiten Empireon gelten z. B.:</p>
+  <ul>
+    <li>schwerwiegender Vertragsverstoß des Kunden, insbesondere fortgesetzte Verletzung von Mitwirkungspflichten oder Nutzungsbedingungen aus § 5 trotz Abmahnung,</li>
+    <li>Zahlungsverzug des Kunden gem. § 6 Abs. 6 um mehr als zwei Monatsentgelte oder in erheblicher Höhe,</li>
+    <li>Insolvenzantrag des Kunden, Eröffnung eines Insolvenzverfahrens oder Abweisung mangels Masse,</li>
+    <li>eine gravierende Störung des Geschäftsbetriebs des Kunden (z. B. Einstellung der Geschäftstätigkeit), die die Erfüllung des Vertragszwecks gefährdet,</li>
+    <li>die Weitergabe der Zugangsdaten oder der Dienste von Empireon an unbefugte Dritte oder ein Angriff auf die Systeme von Empireon durch den Kunden,</li>
+    <li>Nutzung des Services für illegale Zwecke oder mit Auswirkungen, die Empireon's Infrastruktur oder Reputation erheblich gefährden.</li>
+  </ul>
+  <p>Im Falle der außerordentlichen Kündigung durch Empireon aus vom Kunden zu vertretenden wichtigen Gründen ist Empireon berechtigt, Schadensersatz nach den gesetzlichen Bestimmungen zu verlangen.</p>
+
+  <h3>6. Wirkungen der Kündigung</h3>
+  <p>Mit Wirksamwerden der Kündigung werden alle Leistungen eingestellt. Empireon wird Zugänge des Kunden zum System sperren und den Betrieb der AI-Agenten beenden. Auf Wunsch des Kunden wird Empireon dem Kunden innerhalb von 30 Tagen nach Vertragsende die vom Kunden bereitgestellten Daten (z. B. Wissensdatenbanken, Logs) in einem gängigen Format zur Verfügung stellen, soweit diese nicht bereits im Kundenbesitz sind. Danach ist Empireon berechtigt, sämtliche beim Anbieter gespeicherten personenbezogenen Daten des Kunden oder seiner Kunden zu löschen, sofern keine rechtliche Aufbewahrungspflicht besteht. Eine weitere Nutzung der Empireon-Dienste durch den Kunden ist ab Vertragsende unzulässig.</p>
+
+  <h3>7. Übertragung im Zuge von Geschäftsübergang</h3>
+  <p>Empireon ist berechtigt, mit einer Ankündigungsfrist von 4 Wochen den Vertrag im Wege eines Vertragsübergangs (§ 414 BGB) auf einen Rechtsnachfolger oder verbundenes Unternehmen zu übertragen, sofern der neue Vertragspartner die vertraglichen Pflichten übernimmt. Dem Kunden steht für diesen Fall ein Sonderkündigungsrecht zum Zeitpunkt des Übergangs zu, das er binnen 2 Wochen nach Zugang der Mitteilung ausüben muss. Macht er davon keinen Gebrauch, gilt seine Zustimmung zum Übergang als erteilt.</p>
+
+  <h2>§ 12 Datenschutz und Vertraulichkeit</h2>
+
+  <h3>1. Einhaltung Datenschutzgesetze</h3>
+  <p>Beide Parteien werden die jeweils anwendbaren Datenschutzgesetze einhalten, insbesondere die EU-Datenschutzgrundverordnung (DSGVO) und das Bundesdatenschutzgesetz (BDSG) bzw. entsprechende nationale Gesetze in Österreich (DSG) und der Schweiz (DSG neu 2023), soweit diese anwendbar sind. Empireon verarbeitet personenbezogene Daten ausschließlich im Auftrag und nach Weisung des Kunden (als Auftragsverarbeiter gemäß Art. 28 DSGVO) und zu den Zwecken, die zur Vertragserfüllung erforderlich sind. Eine Verarbeitung zu eigenen Zwecken von Empireon erfolgt nicht, ausgenommen anonymisierte Statistiken zur Leistungsverbesserung. Empireon wird Mitarbeiter und etwaige Subunternehmer, die Zugang zu personenbezogenen Daten haben, zur Vertraulichkeit verpflichten und ihnen die einschlägigen Datenschutzpflichten auferlegen.</p>
+
+  <h3>2. Auftragsverarbeitung</h3>
+  <p>Sofern der Kunde personenbezogene Daten seiner Endkunden oder Mitarbeiter durch Empireon verarbeiten lässt (etwa Gesprächsaufzeichnungen, Kontaktdaten von Anrufern etc.), schließen die Parteien vor Beginn der Verarbeitung einen den Anforderungen des Art. 28 DSGVO genügenden Auftragsverarbeitungsvertrag (AVV). Empireon bietet einen standardisierten AVV an, der auf Wunsch elektronisch abgeschlossen werden kann. In diesem AVV werden u.a. Gegenstand und Dauer der Verarbeitung, die Art der personenbezogenen Daten, Kategorien betroffener Personen, die Verpflichtungen von Empireon als Auftragsverarbeiter (insbesondere zu technisch-organisatorischen Maßnahmen, Unterstützung des Kunden bei Betroffenenrechten und Meldung von Datenpannen) sowie die Unterauftragsverhältnisse konkret geregelt. Im Zweifel geht der AVV den Regelungen dieser AGB bei datenschutzbezogenen Themen vor.</p>
+
+  <h3>3. Meldung von Vorfällen</h3>
+  <p>Empireon überwacht die Systeme auf Datenschutzvorfälle (z. B. unbefugter Zugriff, Datenpannen) und wird den Kunden unverzüglich informieren, sollte es zu einer Verletzung des Schutzes personenbezogener Daten im Sinne von Art. 33 DSGVO kommen, die auch Daten des Kunden betrifft. Empireon wird in Abstimmung mit dem Kunden alle notwendigen Maßnahmen treffen, um die Verletzung zu beheben und Folgeschäden zu minimieren. Der Kunde ist verantwortlich, ggf. erforderliche Meldungen gegenüber Aufsichtsbehörden oder Betroffenen rechtzeitig vorzunehmen; Empireon wird ihn dabei angemessen unterstützen.</p>
+
+  <h3>4. Geheimhaltung</h3>
+  <p>Die Parteien verpflichten sich, alle Geschäfts- und Betriebsgeheimnisse sowie als vertraulich gekennzeichnete Informationen der jeweils anderen Partei, die ihnen im Rahmen der Vertragsanbahnung und -durchführung bekannt werden, vertraulich zu behandeln und nur für vertragliche Zwecke zu verwenden. Als vertrauliche Informationen gelten insbesondere technische, finanzielle, strategische oder kundenbezogene Informationen sowie Inhalte von Gesprächen, die über die Voice-AI-Agenten geführt werden, soweit sie einer Partei zuzuordnen sind. Nicht als vertraulich gelten solche Informationen, die ohne Verstoß gegen diese Vereinbarung öffentlich bekannt sind oder von einer Seite unabhängig entwickelt wurden oder rechtmäßig von Dritten erlangt wurden. Die Geheimhaltungspflicht bleibt auch bis 3 Jahre nach Beendigung des Vertrags bestehen. Gesetzliche Auskunftspflichten (z. B. gegenüber Behörden) bleiben unberührt, jedoch wird die auskunftspflichtige Partei – soweit zulässig – die andere Partei vorab informieren.</p>
+
+  <h3>5. Datensicherung und Löschung</h3>
+  <p>Empireon erstellt regelmäßige Backups der kundenseitig gespeicherten Daten, um im Falle von Systemausfällen Datenverlust zu vermeiden. Darüber hinaus ist der Kunde bei kritisch wichtigen Daten (z. B. umfangreiche Gesprächsprotokolle oder Trainingsdaten, die der Kunde eingegeben hat) angehalten, eigene Kopien vorzuhalten. Nach Vertragsende oder auf schriftliches Verlangen wird Empireon personenbezogene Daten des Kunden, die im Auftrag verarbeitet wurden, löschen bzw. dem Kunden zurückgeben, vorbehaltlich etwaiger gesetzlicher Aufbewahrungspflichten. In diesem Zusammenhang weist Empireon darauf hin, dass es ab Vertragsende keine Verpflichtung zur Speicherung von Gesprächsdaten mehr gibt; der Kunde sollte daher selbst für eine rechtzeitige Exportierung wichtiger Daten aus der Plattform sorgen.</p>
+
+  <h2>§ 13 Schlussbestimmungen</h2>
+
+  <h3>1. Anwendbares Recht</h3>
+  <p>Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts (CISG). Auf Kunden mit Sitz in Österreich oder der Schweiz finden ebenfalls diese deutschen AGB und deutsches Recht Anwendung, allerdings gelten zusätzlich die zwingenden Verbraucherschutzvorschriften (soweit einschlägig) des jeweiligen Landes, sofern der Kunde Verbraucher wäre – da der Kunde aber Unternehmer ist, stellen sich solche Fragen im Regelfall nicht. Regelungen der EU-Verordnungen (wie DSGVO direkt, EU AI Act, etc.) gelten unmittelbar, sobald sie in Kraft sind, und finden ergänzend Anwendung. Die Kollisionsnormen des internationalen Privatrechts werden, soweit zulässig, ausgeschlossen.</p>
+
+  <h3>2. Gerichtsstand und Streitbeilegung</h3>
+  <p>Ist der Kunde Kaufmann i.S.d. HGB, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen, so ist ausschließlicher Gerichtsstand für alle Streitigkeiten aus und im Zusammenhang mit diesem Vertrag der Sitz von Empireon (derzeit Ahrensburg, Deutschland). Empireon ist jedoch berechtigt, den Kunden auch an dessen allgemeinem Gerichtsstand zu verklagen. Gesetzliche Regelungen über ausschließliche Gerichtsstände bleiben unberührt. Hinweis nach § 36 VSBG: Empireon ist weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+  <h3>3. Textform und Vertragsänderungen</h3>
+  <p>Nebenabreden zu diesem Vertrag bestehen nicht. Änderungen oder Ergänzungen des Vertrages einschließlich dieser AGB bedürfen zu ihrer Wirksamkeit der Textform (z. B. E-Mail); strengere Formvorschriften bleiben unberührt. Dies gilt auch für eine Änderung dieser Textformklausel selbst. Empireon kann dem Kunden geänderte AGB für die Zukunft vorschlagen. Solche Änderungen werden dem Kunden mindestens 6 Wochen vor ihrem geplanten Inkrafttreten in Textform mitgeteilt. Widerspricht der Kunde der Geltung der neuen AGB nicht innerhalb von 6 Wochen nach Empfang der Mitteilung, gelten die geänderten Bedingungen als angenommen. Empireon wird den Kunden in der Mitteilung auf die Bedeutung seines Schweigens hinweisen. Widerspricht der Kunde fristgerecht, behalten die bisherigen AGB ihre Gültigkeit; Empireon kann dann den Vertrag ggf. zum nächstmöglichen Zeitpunkt ordentlich kündigen.</p>
+
+  <h3>4. Salvatorische Klausel</h3>
+  <p>Sollte eine Bestimmung dieses Vertrages ganz oder teilweise unwirksam oder undurchführbar sein oder werden, so berührt dies nicht die Wirksamkeit der übrigen Bestimmungen. An Stelle der unwirksamen/undurchführbaren Bestimmung gilt diejenige wirksame Bestimmung als vereinbart, die dem wirtschaftlichen Zweck der ursprünglichen Bestimmung am nächsten kommt. Entsprechendes gilt für etwaige Vertragslücken.</p>
+
+  <h3>5. Priorität individueller Abreden</h3>
+  <p>Individuelle vertragliche Abreden zwischen den Parteien (einschließlich Nebenabreden, Ergänzungen und Änderungen) haben in jedem Fall Vorrang vor diesen AGB. Für den Inhalt derartiger Abreden ist ein schriftlicher Vertrag bzw. die schriftliche Bestätigung von Empireon maßgeblich.</p>
+
+  <h3>6. Sonstige Bestimmungen</h3>
+  <p>Rechte und Pflichten aus diesem Vertrag können vom Kunden nur nach vorheriger schriftlicher Zustimmung von Empireon auf Dritte übertragen werden. Empireon ist seinerseits berechtigt, mit einer Ankündigungsfrist von 4 Wochen den Vertrag oder einzelne Rechte und Pflichten hieraus auf ein verbundenes Unternehmen i.S.d. §§ 15 ff. AktG zu übertragen; im Falle einer solchen Übertragung ist der Kunde berechtigt, den Vertrag mit Wirkung zum Übergang der Rechte/Pflichten außerordentlich zu kündigen. Die Vertragsparteien sind sich darüber einig, dass kein Vertrag zugunsten Dritter oder mit Schutzwirkung zugunsten Dritter begründet wird – Dritte können aus diesem Vertrag keine Rechte herleiten.</p>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo"><img src="assets/logo-white.png" alt="Empireon AI Logo"></div>
+      <p>KI-Systeme, bei denen Sicherheit nicht verhandelbar ist. Entwickelt in Ahrensburg. Im Einsatz bei Unternehmen in ganz Deutschland.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Unternehmen</h5>
+      <a href="index.html#warum">Warum wir</a>
+      <a href="index.html#gruender">Team</a>
+      <a href="index.html#loesung">Lösung</a>
+      <a href="index.html#sicherheit">Sicherheit</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </div>
+    <div class="footer-col">
+      <h5>Rechtliches</h5>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="agb.html">AGB</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Empireon AI GmbH. Alle Rechte vorbehalten.</span>
+    <span>Entwickelt in Ahrensburg, Deutschland.</span>
+  </div>
+</footer>
+
+</body>
+</html>

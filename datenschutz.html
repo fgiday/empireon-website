@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutz — Empireon AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --tiefblau: #071126;
+  --tiefblau-flaeche: #0B2244;
+  --akzent: #1E6FB8;
+  --cyan: #4FC3E0;
+  --neutral: #E4EBF3;
+  --weiss: #FFFFFF;
+  --text: #1a1a2e;
+  --text-light: #555;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 26px; color: var(--text); background: var(--neutral); }
+
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  background: var(--tiefblau); padding: 0; height: 60px;
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 24px;
+  height: 100%; display: flex; justify-content: space-between; align-items: center;
+}
+.logo { display: block; text-decoration: none; }
+.logo img { height: 36px; width: auto; }
+.nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+.nav-links a { text-decoration: none; color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--weiss); }
+.nav-cta { background: var(--akzent) !important; color: var(--weiss) !important; padding: 8px 20px; border-radius: 8px; text-transform: none !important; font-size: 14px !important; }
+
+.legal-content {
+  max-width: 800px; margin: 0 auto; padding: 120px 24px 72px;
+}
+.legal-content h1 {
+  font-size: 32px; font-weight: 700; color: var(--tiefblau); margin-bottom: 8px;
+}
+.legal-content .legal-date {
+  font-size: 14px; color: var(--text-light); margin-bottom: 32px;
+}
+.legal-content h2 {
+  font-size: 20px; font-weight: 600; color: var(--tiefblau); margin-top: 36px; margin-bottom: 12px;
+}
+.legal-content h3 {
+  font-size: 17px; font-weight: 600; color: var(--tiefblau); margin-top: 24px; margin-bottom: 8px;
+}
+.legal-content p {
+  margin-bottom: 16px; color: var(--text); line-height: 28px;
+}
+.legal-content ul {
+  margin-bottom: 16px; padding-left: 24px;
+}
+.legal-content ul li {
+  margin-bottom: 8px; line-height: 28px; color: var(--text);
+}
+.legal-content ol {
+  margin-bottom: 16px; padding-left: 24px;
+}
+.legal-content ol li {
+  margin-bottom: 8px; line-height: 28px; color: var(--text);
+}
+.legal-content a { color: var(--akzent); text-decoration: none; }
+.legal-content a:hover { text-decoration: underline; }
+
+footer { background: var(--tiefblau); padding: 36px 24px; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+.footer-brand .footer-logo { margin-bottom: 12px; }
+.footer-brand .footer-logo img { height: 32px; width: auto; }
+.footer-brand p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 20px; max-width: 300px; }
+.footer-col h5 { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.footer-col a { display: block; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 14px; margin-bottom: 6px; transition: color 0.2s; }
+.footer-col a:hover { color: var(--weiss); }
+.footer-bottom {
+  max-width: 1200px; margin: 24px auto 0; padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 13px; color: rgba(255,255,255,0.3);
+  display: flex; justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+  .nav-links { display: none; }
+  .legal-content h1 { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/logo-white.png" alt="Empireon AI Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#warum">Warum wir</a></li>
+      <li><a href="index.html#gruender">Team</a></li>
+      <li><a href="index.html#loesung">Lösung</a></li>
+      <li><a href="index.html#sicherheit">Sicherheit</a></li>
+      <li><a href="index.html#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="legal-content">
+  <h1>Datenschutzerklärung</h1>
+  <p class="legal-date">Stand: Dezember 2025</p>
+
+  <p>Diese Datenschutzhinweise informieren Sie darüber, welche personenbezogenen Daten wir verarbeiten, zu welchen Zwecken, auf welcher Rechtsgrundlage und welche Rechte Ihnen zustehen. Sie gelten für</p>
+  <ul>
+    <li>unsere Website (nachfolgend „Website"),</li>
+    <li>unsere Kommunikationskanäle (z.B. E-Mail, Telefon),</li>
+    <li>sowie unsere KI-gestützten Dienstleistungen, insbesondere Voice AI Agents und Chat-/Assistenzsysteme (nachfolgend zusammen „KI-Dienste"),</li>
+  </ul>
+  <p>sofern wir Ihnen nicht im Einzelfall zusätzliche oder speziellere Datenschutzhinweise bereitstellen (z.B. innerhalb eines Kundenportals, in einem Auftragsverarbeitungsvertrag oder in produktbezogenen Datenschutzhinweisen).</p>
+
+  <h2>1. Verantwortlicher</h2>
+  <p>Empireon AI GmbH<br>Ahrensfelder Stieg 9<br>22926 Ahrensburg<br>Deutschland</p>
+  <p>Vertreten durch: Geschäftsführer Michael Dudenko</p>
+  <p>Kontakt (Datenschutz / allgemeine Anfragen):<br>
+  E-Mail: <a href="mailto:datenschutz@empireon.ai">datenschutz@empireon.ai</a><br>
+  Telefon: +49 15221922834<br>
+  Website: <a href="https://www.md-softwaredesign.de" target="_blank" rel="noopener">https://www.md-softwaredesign.de</a></p>
+
+  <h2>2. Datenschutzbeauftragter</h2>
+  <p>Sofern wir gesetzlich verpflichtet sind oder freiwillig einen Datenschutzbeauftragten bestellen, veröffentlichen wir die Kontaktdaten an dieser Stelle.</p>
+  <p>Aktuell:</p>
+  <p>Kontakt (Datenschutz / allgemeine Anfragen):<br>
+  E-Mail: <a href="mailto:datenschutz@empireon.ai">datenschutz@empireon.ai</a><br>
+  Telefon: +49 15221922827<br>
+  Website: <a href="https://www.os-softwaredesign.de" target="_blank" rel="noopener">https://www.os-softwaredesign.de</a></p>
+
+  <h2>3. Begriffe</h2>
+  <ul>
+    <li><strong>Personenbezogene Daten:</strong> Alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen.</li>
+    <li><strong>Verarbeitung:</strong> Jeder Vorgang im Zusammenhang mit personenbezogenen Daten (z.B. Erheben, Speichern, Übermitteln, Löschen).</li>
+    <li><strong>Betroffene Person:</strong> Die Person, deren personenbezogene Daten verarbeitet werden.</li>
+    <li><strong>Auftragsverarbeiter:</strong> Dienstleister, der personenbezogene Daten in unserem Auftrag verarbeitet.</li>
+  </ul>
+
+  <h2>4. Überblick: Welche Daten verarbeiten wir typischerweise?</h2>
+  <p>Je nach Nutzung unserer Website und Dienste können insbesondere folgende Datenarten betroffen sein:</p>
+  <ul>
+    <li><strong>Nutzungs- und Verbindungsdaten:</strong> IP-Adresse, Zeitpunkt des Zugriffs, Referrer-URL, User-Agent, Fehler-/Logdaten</li>
+    <li><strong>Kontakt- und Kommunikationsdaten:</strong> Name, E-Mail-Adresse, Telefonnummer, Inhalt Ihrer Nachricht</li>
+    <li><strong>Vertrags- und Kundendaten:</strong> Stammdaten, Ansprechpartner, Vertrags-/Abrechnungsdaten, Support-/Ticketdaten</li>
+    <li><strong>KI-Interaktionsdaten (Voice/Chat):</strong> Eingaben, Transkripte, Kontexte, Dialogverläufe, ggf. Audioaufzeichnungen (nur wenn aktiviert/erlaubt), Metadaten (z.B. Gesprächsdauer, Routing-Informationen)</li>
+    <li><strong>Geräte-/Endgeräteinformationen</strong> (z.B. Cookies/Local Storage), sofern eingesetzt</li>
+  </ul>
+
+  <h2>5. Datenverarbeitung beim Besuch unserer Website</h2>
+
+  <h3>5.1 Hosting, Bereitstellung der Website und Server-Logfiles</h3>
+  <p>Bei jedem Aufruf unserer Website verarbeitet unser Hosting-/Plattformanbieter (und wir) technisch erforderliche Daten, um die Website auszuliefern und die Sicherheit zu gewährleisten. Dazu gehören regelmäßig:</p>
+  <ul>
+    <li>IP-Adresse</li>
+    <li>Datum/Uhrzeit des Zugriffs</li>
+    <li>abgerufene Seite/Datei</li>
+    <li>Browsertyp/-version und Betriebssystem</li>
+    <li>Referrer-URL (sofern übermittelt)</li>
+    <li>Statuscodes/Fehlerdaten</li>
+  </ul>
+  <p><strong>Zwecke:</strong> Bereitstellung der Website, IT-Sicherheit, Missbrauchs-/Angriffserkennung, Fehleranalyse, Stabilität/Optimierung.</p>
+  <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an sicherem, stabilem Betrieb). Sofern ein Hostingvertrag/Leistungsbereitstellung betroffen ist: Art. 6 Abs. 1 lit. b DSGVO.</p>
+  <p><strong>Speicherdauer:</strong> Logdaten werden grundsätzlich für 7–30 Tage gespeichert und anschließend gelöscht oder anonymisiert, sofern keine längere Aufbewahrung aus Sicherheitsgründen (z.B. zur Aufklärung von Angriffen) erforderlich ist.</p>
+
+  <h3>5.2 Cookies, Local Storage, ähnliche Technologien &amp; Einwilligungsmanagement</h3>
+  <p>Wir können auf unserer Website Cookies und ähnliche Technologien (z.B. Local Storage, Session Storage, Pixel) einsetzen.</p>
+  <ul>
+    <li><strong>Technisch notwendige Technologien</strong> sind erforderlich, damit die Website funktioniert (z.B. Session-Management, Sicherheitsfunktionen).</li>
+    <li><strong>Optionale Technologien</strong> (z.B. Statistik/Analytics, Komfortfunktionen, Marketing) setzen wir nur ein, wenn Sie eingewilligt haben.</li>
+  </ul>
+  <p><strong>Einwilligung / Rechtsgrundlagen:</strong></p>
+  <ul>
+    <li>Für Zugriff auf Informationen in Endeinrichtungen bzw. das Speichern solcher Informationen (Cookies &amp; ähnliche Technologien) holen wir – soweit erforderlich – eine Einwilligung nach § 25 Abs. 1 TDDDG ein.</li>
+    <li>Ausnahmen gelten für unbedingt erforderliche Technologien nach § 25 Abs. 2 TDDDG.</li>
+    <li>Für die anschließende Verarbeitung personenbezogener Daten gilt (je nach Zweck) insbesondere Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse), jeweils nur im zulässigen Rahmen.</li>
+  </ul>
+  <p><strong>Cookie-Einstellungen:</strong> Sie können Ihre Einwilligungen jederzeit über den „Cookie-Einstellungen"-Link bzw. das Consent-Banner ändern oder widerrufen.</p>
+  <p><strong>Hinweis zu anerkannten Einwilligungsverwaltungsdiensten:</strong> Soweit gesetzlich vorgesehen und technisch verfügbar, unterstützen wir auch anerkannte Dienste zur Einwilligungsverwaltung nach deutschem Recht, damit Präferenzen nutzerfreundlich verwaltet werden können.</p>
+
+  <h3>5.3 Inhalte Dritter, Einbettungen und externe Ressourcen</h3>
+  <p>Sofern wir Inhalte Dritter einbinden (z.B. Karten, Schriftarten, Videos, Repositories, CDN), kann dabei Ihre IP-Adresse und ggf. weitere technische Daten an den jeweiligen Drittanbieter übermittelt werden.</p>
+  <ul>
+    <li>Solche Einbindungen erfolgen entweder nur nach Einwilligung, oder</li>
+    <li>wir gestalten die Einbindung so, dass sie datenschutzfreundlich erfolgt (z.B. lokale Einbindung, Proxy-Lösungen, „2-Klick"-Mechanismen).</li>
+  </ul>
+  <p>Details zu konkret eingesetzten Drittanbietern stellen wir – sofern genutzt – in dieser Datenschutzerklärung oder in den Cookie-/Tool-Informationen bereit.</p>
+
+  <h2>6. Kommunikation mit uns</h2>
+
+  <h3>6.1 Kontakt per E-Mail, Telefon, Formular</h3>
+  <p>Wenn Sie uns kontaktieren, verarbeiten wir Ihre Angaben (z.B. Name, E-Mail, Telefonnummer, Inhalt der Anfrage) zur Bearbeitung.</p>
+  <p><strong>Zwecke:</strong> Bearbeitung Ihrer Anfrage, Rückfragen, Dokumentation.</p>
+  <p><strong>Rechtsgrundlagen:</strong></p>
+  <ul>
+    <li>Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen / Vertrag) oder</li>
+    <li>Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an effizienter Kommunikation).</li>
+  </ul>
+  <p><strong>Speicherdauer:</strong> Wir löschen Kommunikationsdaten, sobald sie für den Zweck nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+
+  <h3>6.2 Newsletter / Produktinformationen</h3>
+  <p>Sofern wir einen Newsletter anbieten, erfolgt der Versand nur mit Ihrer Einwilligung (Double-Opt-In).</p>
+  <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO.</p>
+  <p><strong>Widerruf:</strong> jederzeit möglich, z.B. über Abmeldelink oder durch Nachricht an uns.</p>
+  <p>Wenn Tracking (z.B. Zählpixel/Linktracking) eingesetzt wird, erfolgt dies nur nach Einwilligung und wird im Newsletter bzw. in den Einwilligungsdetails erläutert.</p>
+
+  <h3>6.3 Bewerbungen</h3>
+  <p>Sofern Sie sich bei uns bewerben, verarbeiten wir Bewerbungsdaten ausschließlich zur Durchführung des Bewerbungsverfahrens.</p>
+  <p><strong>Rechtsgrundlagen:</strong> Art. 6 Abs. 1 lit. b DSGVO i.V.m. § 26 BDSG (Anbahnung Beschäftigungsverhältnis) sowie ggf. Art. 6 Abs. 1 lit. a DSGVO (Einwilligung, z.B. für längere Aufbewahrung).</p>
+  <p><strong>Speicherdauer:</strong> In der Regel 6 Monate nach Abschluss des Verfahrens, sofern keine längere Aufbewahrung erforderlich oder vereinbart ist.</p>
+
+  <h2>7. Vertrags- und Kundenbeziehungen</h2>
+  <p>Wenn Sie Kunde oder Geschäftspartner sind (oder werden), verarbeiten wir Daten zur Vertragsanbahnung und Vertragserfüllung:</p>
+  <ul>
+    <li>Ansprechpartner-/Kontaktdaten</li>
+    <li>Vertrags-, Leistungs- und Abrechnungsdaten</li>
+    <li>Kommunikations- und Projektdaten (z.B. Ticketverläufe, Spezifikationen)</li>
+  </ul>
+  <p><strong>Zwecke:</strong> Angebot, Vertragserfüllung, Support, Abrechnung, Nachweis- und Dokumentationspflichten.</p>
+  <p><strong>Rechtsgrundlagen:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertrag) und Art. 6 Abs. 1 lit. c DSGVO (rechtliche Pflichten), ggf. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an effizienter Geschäftsabwicklung).</p>
+  <p><strong>Speicherdauer:</strong> Nach handels- und steuerrechtlichen Vorgaben (regelmäßig 6–10 Jahre für bestimmte Unterlagen), darüber hinaus nur solange erforderlich.</p>
+
+  <h2>8. KI-Dienste, Voice AI Agents und Chat-/Assistenzsysteme</h2>
+
+  <h3>8.1 Worum geht es?</h3>
+  <p>Wir entwickeln, betreiben oder integrieren KI-gestützte Systeme, insbesondere:</p>
+  <ul>
+    <li>Voice AI Agents (z.B. telefonische Sprachassistenten, Voicebots, Call-Routing)</li>
+    <li>Chat-/Assistenzsysteme (z.B. Website-Chat, Support-Assistenten)</li>
+    <li>Automatisierungen (z.B. Zusammenfassungen, Klassifikationen, Ticket-Vorbereitung)</li>
+  </ul>
+  <p>Je nach Einsatzszenario verarbeiten diese Systeme personenbezogene Daten in Form von Audio, Text und Metadaten.</p>
+
+  <h3>8.2 Welche Daten können bei KI-Interaktionen verarbeitet werden?</h3>
+  <p>Je nach konkreter Implementierung und Freigabe:</p>
+  <ul>
+    <li>Audio-/Sprachdaten (Live-Audio; Aufzeichnungen nur, wenn aktiviert und rechtlich zulässig)</li>
+    <li>Transkripte (Speech-to-Text) und Antworttexte (Textgenerierung)</li>
+    <li>Dialogkontext (z.B. zur Bearbeitung eines Anliegens)</li>
+    <li>Metadaten (Zeitpunkt, Dauer, Routing-Status, technische Kennungen)</li>
+    <li>Inhalte, die Sie bereitstellen (z.B. Sachverhalte, Dokumentauszüge, Bestell-/Supportdaten)</li>
+  </ul>
+  <p><strong>Wichtig:</strong> Wir fordern Nutzer dazu auf, keine besonderen Kategorien personenbezogener Daten (z.B. Gesundheitsdaten) oder vertrauliche Informationen einzugeben/auszusprechen, sofern dies nicht ausdrücklich für den jeweiligen Zweck erforderlich ist.</p>
+
+  <h3>8.3 Zwecke der Verarbeitung bei KI-Diensten</h3>
+  <ul>
+    <li>Bereitstellung und Betrieb der KI-Funktion (z.B. Beantwortung von Fragen, Ticketanlage, Termin-/Informationsauskünfte)</li>
+    <li>Verbesserung der Nutzererfahrung (z.B. schnellere Bearbeitung, konsistente Antworten)</li>
+    <li>Qualitätssicherung und Fehlersuche (z.B. Analyse von Fehlklassifikationen)</li>
+    <li>IT-Sicherheit, Missbrauchs-/Betrugserkennung, Nachweisführung</li>
+  </ul>
+
+  <h3>8.4 Rechtsgrundlagen bei KI-Diensten</h3>
+  <p>Je nach Kontext:</p>
+  <ul>
+    <li>Art. 6 Abs. 1 lit. b DSGVO (Vertrag / vorvertragliche Maßnahmen), z.B. Support- oder Leistungsanfragen</li>
+    <li>Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse), z.B. sichere und effiziente Bereitstellung, Qualitätsverbesserung, Missbrauchsprävention</li>
+    <li>Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), z.B. wenn Aufzeichnungen/Training/Analytics oder optionale Funktionen eingesetzt werden</li>
+    <li>Art. 9 DSGVO (besondere Datenkategorien) nur, wenn rechtlich zulässig und erforderlich – in der Regel nur mit ausdrücklicher Einwilligung oder wenn eine spezielle Ausnahme greift</li>
+  </ul>
+  <p><strong>Telefon-/Audioaufzeichnung:</strong> Sofern Gespräche aufgezeichnet werden, erfolgt dies nur, wenn (1) dies im konkreten Szenario erforderlich ist, (2) Sie vorab eindeutig informiert werden und (3) eine wirksame Einwilligung vorliegt. Alternativ bieten wir – soweit möglich – kontaktbasierte Wege ohne Aufzeichnung an.</p>
+
+  <h3>8.5 Lokale KI, On-Premise und Datenminimierung</h3>
+  <p>Wir verfolgen einen datenschutzfreundlichen Ansatz („Privacy by Design"):</p>
+  <ul>
+    <li><strong>Lokale Verarbeitung,</strong> wo sinnvoll (z.B. Inferenz auf eigener Infrastruktur oder On-Premise beim Kunden), um Datenübermittlungen zu reduzieren.</li>
+    <li><strong>Datenminimierung:</strong> Verarbeitung nur der Daten, die für den Zweck erforderlich sind.</li>
+    <li><strong>Konfigurierbare Speicherung:</strong> Wo möglich, können Kunden/Nutzer Speicherdauern, Protokollierung und Aufzeichnungsfunktionen steuern.</li>
+  </ul>
+
+  <h3>8.6 Einsatz externer KI-Modelle / KI-Plattformen</h3>
+  <p>Sofern wir zur Bereitstellung bestimmter Funktionen externe KI-Modelle oder Plattformen (z.B. Speech-to-Text, Text-to-Speech, LLM-APIs) nutzen, geschieht dies unter folgenden Grundsätzen:</p>
+  <ul>
+    <li>Einsatz nur auf Basis eines Vertrags zur Auftragsverarbeitung bzw. gleichwertiger datenschutzrechtlicher Vereinbarungen, sofern erforderlich</li>
+    <li>Zweckbindung: Daten werden nur zur Bereitstellung der Funktion verarbeitet</li>
+    <li>Keine Nutzung zu eigenen Trainingszwecken durch den Anbieter, soweit vertraglich/technisch verfügbar (z.B. Opt-out/„no training"/„zero retention"/EU-Region)</li>
+    <li>Transparenz: Wir informieren über eingesetzte Anbieter und Datenflüsse in den jeweiligen Tool-Informationen bzw. produktbezogenen Datenschutzhinweisen</li>
+  </ul>
+
+  <h3>8.7 Training, Verbesserung und Qualitätssicherung von KI</h3>
+  <p><strong>Grundsatz:</strong> Inhalte aus Interaktionen werden nicht automatisch für das Training allgemein verfügbarer KI-Modelle verwendet.</p>
+  <p>Sofern wir Daten für Qualitätssicherung oder Verbesserung nutzen, geschieht dies in der Regel:</p>
+  <ul>
+    <li>auf Basis anonymisierter oder aggregierter Daten, oder</li>
+    <li>mit Pseudonymisierung, strikten Zugriffsbeschränkungen und minimierten Datenfeldern, oder</li>
+    <li>nur mit Einwilligung bzw. auf vertraglicher Grundlage (z.B. im Rahmen eines B2B-Projekts, in dem unser Kunde als Verantwortlicher entscheidet).</li>
+  </ul>
+
+  <h3>8.8 Transparenzpflichten und Nutzerhinweise im Sinne des EU AI Act</h3>
+  <p>Wenn unsere KI-Systeme mit Menschen interagieren (z.B. Chat-/Voice-Agent), sorgen wir – unabhängig von Übergangsfristen – dafür, dass Nutzer klar erkennen, dass sie mit einem KI-System kommunizieren. Beispiele:</p>
+  <ul>
+    <li>Hinweis zu Beginn eines Chats/Calls („KI-Assistent" / „automatisierter Agent")</li>
+    <li>Möglichkeit zur Kontaktaufnahme mit einem Menschen (z.B. Übergabe an Support), soweit im Szenario vorgesehen/erforderlich</li>
+    <li>Kennzeichnung, sofern Inhalte künstlich erzeugt wurden, wenn dies für den Kontext relevant ist (z.B. synthetische Audioausgaben)</li>
+  </ul>
+
+  <h3>8.9 Keine verbotenen KI-Praktiken / verantwortungsvolle Nutzung</h3>
+  <p>Wir setzen KI nicht ein für Zwecke, die mit Grundrechten unvereinbar sind oder die geltendes Recht untersagen (z.B. unzulässige manipulative Praktiken). Wir prüfen bei neuen Anwendungsfällen die Risikokategorie und implementieren angemessene Schutzmaßnahmen.</p>
+
+  <h2>9. Auftragsverarbeitung (B2B) – wenn wir für Kunden tätig werden</h2>
+  <p>Sofern wir KI-Dienste für Kunden bereitstellen (z.B. ein Voice-Agent im Auftrag eines Unternehmens), verarbeiten wir personenbezogene Daten in vielen Fällen als Auftragsverarbeiter nach Art. 28 DSGVO.</p>
+  <ul>
+    <li>Verantwortlicher für die Verarbeitung ist dann grundsätzlich unser jeweiliger Kunde.</li>
+    <li>Unsere Verarbeitung erfolgt ausschließlich nach dokumentierten Weisungen und den vertraglich vereinbarten technischen und organisatorischen Maßnahmen.</li>
+    <li>Unterauftragsverarbeiter setzen wir nur unter den Bedingungen des Art. 28 DSGVO ein.</li>
+  </ul>
+  <p>Betroffene Personen sollten in diesen Fällen zusätzlich die Datenschutzhinweise des jeweiligen Verantwortlichen (unseres Kunden) beachten.</p>
+
+  <h2>10. Empfänger, Kategorien von Empfängern</h2>
+  <p>Je nach Verarbeitungsvorgang können Empfänger sein:</p>
+  <ul>
+    <li>IT-/Hosting-/Cloud-Dienstleister</li>
+    <li>Anbieter von Kommunikations- und Kollaborationstools (E-Mail, Ticketing, Telefonie, Video)</li>
+    <li>ggf. KI-Plattformanbieter (Speech-to-Text, Text-to-Speech, LLM)</li>
+    <li>Zahlungs-/Abrechnungsdienstleister (falls eingesetzt)</li>
+    <li>Behörden/Gerichte, soweit wir dazu rechtlich verpflichtet sind</li>
+  </ul>
+  <p>Wir geben Daten nur weiter, wenn eine Rechtsgrundlage besteht und dies zur Zweckerreichung erforderlich ist.</p>
+
+  <h2>11. Drittlandübermittlungen (außerhalb EU/EWR)</h2>
+  <p>Sofern wir Dienstleister einsetzen, die Daten außerhalb des EU/EWR verarbeiten oder aus Drittländern auf Daten zugreifen können, stellen wir ein angemessenes Datenschutzniveau sicher, z.B. durch:</p>
+  <ul>
+    <li>Angemessenheitsbeschluss der EU-Kommission, oder</li>
+    <li>EU-Standardvertragsklauseln (SCC) und zusätzliche technische/organisatorische Maßnahmen (z.B. Verschlüsselung), oder</li>
+    <li>sonstige zulässige Garantien nach Art. 44 ff. DSGVO.</li>
+  </ul>
+  <p>Details zu konkreten Drittlandübermittlungen teilen wir – sofern relevant – in den jeweiligen Tool-Informationen mit.</p>
+
+  <h2>12. Speicherdauer und Löschung</h2>
+  <p>Wir speichern personenbezogene Daten nur so lange, wie es für die jeweiligen Zwecke erforderlich ist, oder wir gesetzlich dazu verpflichtet sind. Kriterien sind insbesondere:</p>
+  <ul>
+    <li>Zweck der Verarbeitung</li>
+    <li>vertragliche Notwendigkeiten</li>
+    <li>gesetzliche Aufbewahrungsfristen</li>
+    <li>mögliche Rechtsansprüche und Verjährungsfristen</li>
+    <li>Sicherheitsaspekte (z.B. Logdaten)</li>
+  </ul>
+
+  <h2>13. Ihre Rechte</h2>
+  <p>Sie haben nach der DSGVO insbesondere folgende Rechte (jeweils unter den gesetzlichen Voraussetzungen):</p>
+  <ul>
+    <li>Auskunft (Art. 15 DSGVO)</li>
+    <li>Berichtigung (Art. 16 DSGVO)</li>
+    <li>Löschung (Art. 17 DSGVO)</li>
+    <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+    <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+    <li>Widerspruch gegen Verarbeitung auf Basis Art. 6 Abs. 1 lit. e/f DSGVO (Art. 21 DSGVO)</li>
+    <li>Widerruf einer Einwilligung (Art. 7 Abs. 3 DSGVO), mit Wirkung für die Zukunft</li>
+    <li>Nicht ausschließlich automatisierten Entscheidungen unterworfen zu werden (Art. 22 DSGVO), sofern einschlägig</li>
+  </ul>
+  <p>Zur Ausübung Ihrer Rechte wenden Sie sich bitte an die in Abschnitt 1 genannte Kontaktadresse.</p>
+
+  <h2>14. Widerspruchsrecht (Art. 21 DSGVO)</h2>
+  <p>Wenn wir Daten auf Grundlage berechtigter Interessen (Art. 6 Abs. 1 lit. f DSGVO) verarbeiten, können Sie aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit Widerspruch einlegen.</p>
+  <p>Wir verarbeiten dann nicht weiter, es sei denn, wir können zwingende schutzwürdige Gründe nachweisen oder die Verarbeitung dient der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen.</p>
+
+  <h2>15. Beschwerderecht bei der Aufsichtsbehörde</h2>
+  <p>Sie haben das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren.</p>
+  <p>Für die Empireon AI GmbH (Sitz in Schleswig-Holstein) ist regelmäßig zuständig:<br>
+  Unabhängiges Landeszentrum für Datenschutz Schleswig-Holstein (ULD)<br>
+  Holstenstraße 98, 24103 Kiel, Deutschland<br>
+  E-Mail: <a href="mailto:mail@datenschutzzentrum.de">mail@datenschutzzentrum.de</a><br>
+  Telefon: 0431 988-1200</p>
+
+  <h2>16. Technische und organisatorische Maßnahmen (TOMs) – Datenschutz &amp; Informationssicherheit</h2>
+  <p>Wir setzen angemessene technische und organisatorische Maßnahmen ein, um personenbezogene Daten zu schützen, insbesondere:</p>
+  <ul>
+    <li>Zugriffskontrolle (Rollen-/Rechtekonzepte, Least Privilege)</li>
+    <li>Verschlüsselung (Transportverschlüsselung via TLS; ggf. Verschlüsselung ruhender Daten)</li>
+    <li>Protokollierung und Monitoring (sicherheitsorientiert, datensparsam)</li>
+    <li>Schutz vor Angriffen (z.B. Rate-Limiting, WAF/Firewall-Konzepte, DDoS-Schutz – sofern eingesetzt)</li>
+    <li>Regelungen zu Löschung, Berechtigungskonzepten, Backup &amp; Recovery</li>
+    <li>Datenschutz durch Technikgestaltung und datenschutzfreundliche Voreinstellungen („Privacy by Design/Default")</li>
+    <li>Schulungen und Vertraulichkeitsverpflichtungen für Mitarbeitende</li>
+  </ul>
+
+  <h2>17. KI-Governance &amp; EU-AI-Act-Compliance-Maßnahmen (Auszug)</h2>
+  <p>Zur verantwortungsvollen und rechtskonformen Nutzung von KI implementieren wir ein Governance-System, das insbesondere folgende Elemente umfasst:</p>
+  <ol>
+    <li><strong>KI-Inventar &amp; Risikoklassifizierung:</strong> Erfassung eingesetzter KI-Systeme und Einordnung nach Risikokategorie.</li>
+    <li><strong>Transparenz &amp; Kennzeichnung:</strong> Klarer Hinweis bei Interaktionen mit KI; Kennzeichnung synthetischer Inhalte, soweit erforderlich.</li>
+    <li><strong>Human Oversight:</strong> Verfahren zur menschlichen Kontrolle/Eskalation, insbesondere bei kritischen Vorgängen.</li>
+    <li><strong>Daten-Governance:</strong> Datenminimierung, Zweckbindung, Qualitäts- und Zugriffskonzepte; bevorzugt lokale/on-premise Verarbeitung.</li>
+    <li><strong>Sicherheitsmaßnahmen:</strong> Schutz vor Datenabfluss, Prompt-Injection/Manipulation und unautorisiertem Zugriff (organisatorisch und technisch).</li>
+    <li><strong>Prüf- und Verbesserungsprozesse:</strong> Testing, Monitoring, Incident-Management und dokumentierte Korrekturmaßnahmen.</li>
+    <li><strong>AI Literacy:</strong> Schulung relevanter Mitarbeitender im sicheren und verantwortungsvollen Einsatz von KI.</li>
+  </ol>
+
+  <h2>18. Aktualität und Änderungen</h2>
+  <p>Wir können diese Datenschutzhinweise anpassen, wenn sich Rechtslage, Technik oder unsere Verarbeitungsvorgänge ändern. Die jeweils aktuelle Version wird auf unserer Website veröffentlicht.</p>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo"><img src="assets/logo-white.png" alt="Empireon AI Logo"></div>
+      <p>KI-Systeme, bei denen Sicherheit nicht verhandelbar ist. Entwickelt in Ahrensburg. Im Einsatz bei Unternehmen in ganz Deutschland.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Unternehmen</h5>
+      <a href="index.html#warum">Warum wir</a>
+      <a href="index.html#gruender">Team</a>
+      <a href="index.html#loesung">Lösung</a>
+      <a href="index.html#sicherheit">Sicherheit</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </div>
+    <div class="footer-col">
+      <h5>Rechtliches</h5>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="agb.html">AGB</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Empireon AI GmbH. Alle Rechte vorbehalten.</span>
+    <span>Entwickelt in Ahrensburg, Deutschland.</span>
+  </div>
+</footer>
+
+</body>
+</html>

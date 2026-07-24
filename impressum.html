@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum — Empireon AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --tiefblau: #071126;
+  --tiefblau-flaeche: #0B2244;
+  --akzent: #1E6FB8;
+  --cyan: #4FC3E0;
+  --neutral: #E4EBF3;
+  --weiss: #FFFFFF;
+  --text: #1a1a2e;
+  --text-light: #555;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 26px; color: var(--text); background: var(--neutral); }
+
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  background: var(--tiefblau); padding: 0; height: 60px;
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 24px;
+  height: 100%; display: flex; justify-content: space-between; align-items: center;
+}
+.logo { display: block; text-decoration: none; }
+.logo img { height: 36px; width: auto; }
+.nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+.nav-links a { text-decoration: none; color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--weiss); }
+.nav-cta { background: var(--akzent) !important; color: var(--weiss) !important; padding: 8px 20px; border-radius: 8px; text-transform: none !important; font-size: 14px !important; }
+
+.legal-content {
+  max-width: 800px; margin: 0 auto; padding: 120px 24px 72px;
+}
+.legal-content h1 {
+  font-size: 32px; font-weight: 700; color: var(--tiefblau); margin-bottom: 32px;
+}
+.legal-content h2 {
+  font-size: 20px; font-weight: 600; color: var(--tiefblau); margin-top: 32px; margin-bottom: 12px;
+}
+.legal-content p {
+  margin-bottom: 16px; color: var(--text); line-height: 28px;
+}
+.legal-content a { color: var(--akzent); text-decoration: none; }
+.legal-content a:hover { text-decoration: underline; }
+
+footer { background: var(--tiefblau); padding: 36px 24px; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+.footer-brand .footer-logo { margin-bottom: 12px; }
+.footer-brand .footer-logo img { height: 32px; width: auto; }
+.footer-brand p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 20px; max-width: 300px; }
+.footer-col h5 { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.footer-col a { display: block; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 14px; margin-bottom: 6px; transition: color 0.2s; }
+.footer-col a:hover { color: var(--weiss); }
+.footer-bottom {
+  max-width: 1200px; margin: 24px auto 0; padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 13px; color: rgba(255,255,255,0.3);
+  display: flex; justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+  .nav-links { display: none; }
+  .legal-content h1 { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/logo-white.png" alt="Empireon AI Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#warum">Warum wir</a></li>
+      <li><a href="index.html#gruender">Team</a></li>
+      <li><a href="index.html#loesung">Lösung</a></li>
+      <li><a href="index.html#sicherheit">Sicherheit</a></li>
+      <li><a href="index.html#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="legal-content">
+  <h1>Impressum</h1>
+
+  <h2>Angaben gemäß § 5 TMG</h2>
+  <p>Empireon AI GmbH<br>Ahrensfelder Stieg 9<br>22926 Ahrensburg<br>Deutschland</p>
+
+  <h2>Registereintrag</h2>
+  <p>Eintragung im Handelsregister<br>Registergericht: Amtsgericht Lübeck<br>Registernummer: HRB 27059 HL</p>
+
+  <h2>Vertreten durch</h2>
+  <p>Geschäftsführer: Michael Dudenko</p>
+
+  <h2>Kontakt</h2>
+  <p>Telefon: <a href="tel:+4941028954332">+49 4102 8954332</a></p>
+
+  <p>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: Michael Dudenko</p>
+
+  <h2>EU-Streitschlichtung</h2>
+  <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>.<br>Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+
+  <h2>Verbraucher­streit­beilegung / Universal­schlichtungs­stelle</h2>
+  <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+  <h2>Verantwortlichkeit für Inhalte</h2>
+  <p>In unserer Rolle als Anbieter dieser Webseite tragen wir gemäß § 7 Abs.1 TMG die Verantwortung für eigene Inhalte gemäß den geltenden Gesetzen. Gemäß §§ 8 bis 10 TMG sind wir jedoch nicht dazu angehalten, übermittelte oder gespeicherte externe Daten zu überprüfen oder nach Anzeichen für illegale Aktivitäten zu suchen.</p>
+  <p>Sollten wir gesetzlich dazu aufgefordert werden, Informationen zu entfernen oder den Zugang zu diesen zu sperren, werden wir dem nachkommen. Unsere Haftung in Bezug auf solche Inhalte tritt jedoch erst in Kraft, wenn wir von einer konkreten Rechtsverletzung Kenntnis erlangen. Sollten wir von solchen Rechtsverletzungen erfahren, werden wir die betroffenen Inhalte schnellstmöglich entfernen.</p>
+
+  <h2>Verantwortlichkeit für externe Links</h2>
+  <p>Diese Webseite beinhaltet Links, die zu Webseiten Dritter führen, auf deren Inhalte wir keinen Einfluss ausüben können. Daher können wir für diese externen Inhalte keine Haftung übernehmen. Für den Inhalt der verlinkten Seiten sind ausschließlich die jeweiligen Anbieter verantwortlich. Wir haben diese Seiten zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft und konnten keine rechtswidrigen Inhalte feststellen.</p>
+  <p>Es ist uns jedoch nicht möglich, die Inhalte der verlinkten Seiten ständig zu kontrollieren, ohne konkrete Anhaltspunkte für eine Rechtsverletzung. Sollten uns solche Verstöße bekannt werden, werden die entsprechenden Links sofort entfernt.</p>
+
+  <h2>Urheberrechtshinweis</h2>
+  <p>Die auf dieser Webseite veröffentlichten Inhalte und Werke unterstehen dem deutschen Urheberrecht. Jegliche Art von Vervielfältigung, Bearbeitung, Verbreitung und Verwertung erfordert die schriftliche Zustimmung des jeweiligen Urhebers. Das Herunterladen und Kopieren dieser Webseite ist nur für den privaten Gebrauch erlaubt, nicht jedoch für kommerzielle Zwecke.</p>
+  <p>Wir respektieren die Urheberrechte von Dritten und kennzeichnen solche Inhalte entsprechend. Sollten Sie dennoch auf eine Verletzung des Urheberrechts hinweisen wollen, bitten wir um einen Hinweis. Bei Kenntnis von Rechtsverstößen werden wir solche Inhalte umgehend entfernen.</p>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo"><img src="assets/logo-white.png" alt="Empireon AI Logo"></div>
+      <p>KI-Systeme, bei denen Sicherheit nicht verhandelbar ist. Entwickelt in Ahrensburg. Im Einsatz bei Unternehmen in ganz Deutschland.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Unternehmen</h5>
+      <a href="index.html#warum">Warum wir</a>
+      <a href="index.html#gruender">Team</a>
+      <a href="index.html#loesung">Lösung</a>
+      <a href="index.html#sicherheit">Sicherheit</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </div>
+    <div class="footer-col">
+      <h5>Rechtliches</h5>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="agb.html">AGB</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Empireon AI GmbH. Alle Rechte vorbehalten.</span>
+    <span>Entwickelt in Ahrensburg, Deutschland.</span>
+  </div>
+</footer>
+
+</body>
+</html>
